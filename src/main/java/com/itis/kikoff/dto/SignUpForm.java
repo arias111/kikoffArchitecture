@@ -1,6 +1,7 @@
 package com.itis.kikoff.dto;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -13,6 +14,8 @@ public class SignUpForm {
     private String lastName;
     private String patronymic;
     private String password;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
 
     private LocalDateTime creationDate;
