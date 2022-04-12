@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Component
@@ -23,8 +24,6 @@ public class SignUpServiceImpl implements SignUpService {
     @Autowired
     private MailsService mailsService;
 
-//    @Autowired
-//    private SmsService smsService;
 
     @Override
     public boolean signUp(SignUpForm form) {
@@ -33,6 +32,8 @@ public class SignUpServiceImpl implements SignUpService {
                 .lastName(form.getLastName())
                 .patronymic(form.getPatronymic())
                 .email(form.getEmail())
+                .birthday(form.getBirthday())
+                .creationDate(LocalDateTime.now())
                 .hashPassword(passwordEncoder.encode(form.getPassword()))
                 .state(State.NOT_CONFIRMED)
                 .confirmCode(UUID.randomUUID().toString())

@@ -6,8 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import com.itis.kikoff.models.auth.User;
 
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,7 +20,7 @@ public class UserDto {
     private String firstName;
     private String lastName;
     private String patronymic;
-    private LocalDateTime birthday;
+    private LocalDate birthday;
 
 
     public static UserDto from(User user) {

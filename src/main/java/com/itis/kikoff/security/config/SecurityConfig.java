@@ -3,6 +3,7 @@ package com.itis.kikoff.security.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -11,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @EnableWebSecurity
+@Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -30,14 +32,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.authorizeRequests()
                 .antMatchers("/signUp").permitAll()
-                .antMatchers("/**").authenticated()
-                .antMatchers("/users").hasAnyAuthority("ADMIN")
-                .antMatchers("/profile").authenticated()
+                .antMatchers("/users/**").hasAnyAuthority("ADMIN")
+                .antMatchers("/personal_account").authenticated()
+               // .antMatchers("/**").authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/signIn")
                 .usernameParameter("email")
-                .defaultSuccessUrl("/profile")
+                .defaultSuccessUrl("/personal_account", true)
                 .failureUrl("/signIn?error")
                 .permitAll();
     }

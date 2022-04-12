@@ -41,5 +41,23 @@ public class UsersServiceImpl implements UsersService {
         usersRepository.save(user);
         return from(user);
     }
+    @Override
+    public UserDto updateUser(Long userId, UserDto user) {
+        User userForUpdate = usersRepository.findById(userId)
+                .orElseThrow(IllegalArgumentException::new);
+        userForUpdate.setEmail(user.getEmail());
+        userForUpdate.setFirstName(user.getFirstName());
+        userForUpdate.setLastName(user.getLastName());
+        usersRepository.save(userForUpdate);
+        return from(userForUpdate);
+    }
+
+    @Override
+    public void deleteUser(Long userId) {
+        User userForDelete = usersRepository.findById(userId)
+                .orElseThrow(IllegalArgumentException::new);
+        userForDelete.setIsDeleted(true);
+        usersRepository.save(userForDelete);
+    }
 }
 

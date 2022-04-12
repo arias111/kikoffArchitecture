@@ -2,6 +2,9 @@ package com.itis.kikoff.dto;
 
 import lombok.Data;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Data
 public class SignUpForm {
 
@@ -10,5 +13,8 @@ public class SignUpForm {
     private String lastName;
     private String patronymic;
     private String password;
+    private LocalDate birthday;
+
+    private LocalDateTime creationDate;
 }
 

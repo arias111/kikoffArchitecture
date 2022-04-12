@@ -12,6 +12,7 @@ import org.springframework.ui.freemarker.SpringTemplateLoader;
 import com.itis.kikoff.models.auth.User;
 import com.itis.kikoff.repositories.UserRepository;
 import com.itis.kikoff.models.enums.State;
+
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class MailsServiceImpl implements MailsService {
     @Autowired
     private UserRepository usersRepository;
 
-    @Value("ilzira10102001@gmail.com")
+    @Value("${spring.mail.username}")
     private String mailFrom;
 
     private final Template confirmMailTemplate;
@@ -40,11 +41,12 @@ public class MailsServiceImpl implements MailsService {
                         "/"));
         configuration.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
         try {
-            this.confirmMailTemplate =configuration.getTemplate("mail/confirm_mail.ftlh");
+            this.confirmMailTemplate = configuration.getTemplate("mail/confirm_mail.ftlh");
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
     }
+
     @Override
     public void sendEmailForConfirm(String email, String code) {
         String mailText = getEmailText(code);
@@ -52,15 +54,26 @@ public class MailsServiceImpl implements MailsService {
         javaMailSender.send(messagePreparator);
     }
 
+    @Override
+    public Boolean isConfirmed(String code) {
+        Optional<User> user = usersRepository.findByConfirmCode(code);
+        if (user.isPresent()) {
+            user.get().setState(State.CONFIRMED);
+            usersRepository.save(user.get());
+            return Boolean.TRUE;
+        }
+        return Boolean.FALSE;
+    }
+
+
     private MimeMessagePreparator getEmail(String email, String mailText) {
-        MimeMessagePreparator messagePreparator = mimeMessage -> {
+        return mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setFrom(mailFrom);
             messageHelper.setTo(email);
             messageHelper.setSubject("Регистрация");
             messageHelper.setText(mailText, true);
         };
-        return messagePreparator;
     }
 
     private String getEmailText(String code) {
@@ -78,18 +91,4 @@ public class MailsServiceImpl implements MailsService {
         // получили текст сообщения из шаблона
         return writer.toString();
     }
-
-    @Override
-    public Boolean isConfirmed(String code){
-        Optional<User> user = usersRepository.findByConfirmCode(code);
-        if (user.isPresent()) {
-//            user.get().setConfirmCode(code);
-           // user.get().setState(State.CONFIRMED);
-            usersRepository.save(user.get());
-            return Boolean.TRUE;
-        }
-        return Boolean.FALSE;
-    }
-//
-//    }
 }

@@ -1,5 +1,6 @@
 package com.itis.kikoff.security.details;
 
+import com.itis.kikoff.models.enums.State;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,7 +20,6 @@ public class UserDetailsImpl implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singleton(new SimpleGrantedAuthority(user.getRole().toString()));
-//        return Collections.singletonList(new SimpleGrantedAuthority("USER"));
     }
 
     @Override
@@ -53,7 +53,7 @@ public class UserDetailsImpl implements UserDetails {
     // включен ли пользователь
     @Override
     public boolean isEnabled() {
-        return true;
+        return user.getState().equals(State.CONFIRMED);
     }
 
     public User getUser() {

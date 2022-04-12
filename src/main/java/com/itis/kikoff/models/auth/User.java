@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -28,15 +29,16 @@ public class User {
     private String firstName;
     private String lastName;
     private String patronymic;
+    private LocalDate birthday;
+    private LocalDateTime creationDate;
 
+    private Boolean isDeleted;
     @Enumerated(value = EnumType.STRING)
     private Role role;
 
     @Enumerated(value = EnumType.STRING)
     private State state;
 
-    private LocalDateTime birthday;
-    private LocalDateTime creationDate;
     @OneToMany(mappedBy = "user")
     private List<Basket> baskets;
     @OneToOne(mappedBy = "user")
