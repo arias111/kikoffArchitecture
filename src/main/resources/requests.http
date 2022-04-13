@@ -1,0 +1,22 @@
+
+POST http://localhost:8081/signUp
+Content-Type: application/json
+
+{
+  "email": "ilzira2001@bk.ru",
+  "password": "Qwerty007",
+  "firstName": "Михаил",
+  "lastName": "Абрамский",
+  "patronymic": "testovich",
+  "birthday": "1990-10-10",
+  "creationDate": "1990-10-10 10:12:20"
+}
+
+###
+POST http://localhost:8081/signIn
+Content-Type: application/json
+
+{
+  "email": "ilzira2001@bk.ru",
+  "password": "test123"
+}
