@@ -53,7 +53,7 @@ public class UserDetailsImpl implements UserDetails {
     // включен ли пользователь
     @Override
     public boolean isEnabled() {
-        return user.getState().equals(State.CONFIRMED);
+        return user.isActive();
     }
 
     public User getUser() {

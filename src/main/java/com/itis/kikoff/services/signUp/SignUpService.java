@@ -1,7 +1,11 @@
 package com.itis.kikoff.services.signUp;
 
-import com.itis.kikoff.dto.SignUpForm;
+import com.itis.kikoff.dto.SignUpFormDto;
 
 public interface SignUpService {
-    boolean signUp(SignUpForm form);
+    void signUpUser(SignUpFormDto form);
+
+//    boolean userWithSuchEmailExists(String email);
+
+//    void signUp(SignUpFormDto userForm);
 }

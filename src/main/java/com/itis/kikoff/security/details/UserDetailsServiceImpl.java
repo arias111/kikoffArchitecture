@@ -1,32 +1,32 @@
 package com.itis.kikoff.security.details;
 
+import com.itis.kikoff.models.Token;
+import com.itis.kikoff.repositories.TokensRepository;
 import com.itis.kikoff.repositories.UserRepository;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
-import com.itis.kikoff.models.auth.User;
-import com.itis.kikoff.repositories.UserRepository;
 
-import java.util.Optional;
+import java.util.function.Supplier;
+
 
 // чтобы Spring Security мог получить нашего пользователя по емайлу
 
-@Component("customUserDetailsService")
+@Component("tokenUserDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    private UserRepository usersRepository;
+    private TokensRepository tokensRepository;
 
+    @SneakyThrows
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Optional<User> userCandidate = usersRepository.findByEmail(email);
-        if (userCandidate.isPresent()) {
-            return new UserDetailsImpl(userCandidate.get());
-        } else {
-            throw new UsernameNotFoundException("User not found");
-        }
+    public UserDetails loadUserByUsername(String token) throws UsernameNotFoundException {
+        Token result = tokensRepository.findByToken(token).orElseThrow((Supplier<Throwable>) () -> new UsernameNotFoundException("Token not found"));
+        return new UserDetailsImpl(result.getUser());
     }
+
 }
 

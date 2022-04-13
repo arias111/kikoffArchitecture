@@ -1,16 +1,15 @@
 package com.itis.kikoff.services.users;
 import com.itis.kikoff.dto.UserDto;
+import com.itis.kikoff.models.auth.User;
+
 import java.util.List;
 
 public interface UsersService {
 
-    List<UserDto> getAllUsers();
+    void blockUser(Long userId);
+    User getUser(Long userId);
 
-    UserDto getUserById(Long userId);
+//    List<UserDto> getAllUsers();
+//    UserDto addUser(UserDto user);
 
-    UserDto addUser(UserDto user);
-
-    UserDto updateUser(Long userId,UserDto user);
-
-    void deleteUser(Long userId);
 }

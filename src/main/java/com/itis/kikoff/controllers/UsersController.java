@@ -13,42 +13,59 @@ import com.itis.kikoff.services.users.UsersService;
 import java.util.List;
 
 
-@Controller
-public class UsersController {
+//@Controller
+//public class UsersController {
+//
+//    @Autowired
+//    private UsersService usersService;
+//
+//
+//    @GetMapping("/users")
+//    @ResponseBody
+//    public ResponseEntity<List<UserDto>> getAllUsers() {
+//        return ResponseEntity.ok(usersService.getAllUsers());
+//    }
+//
+//    // GET users/3
+//    @GetMapping("/users/{user-id}")
+//    @ResponseBody
+//    public ResponseEntity<UserDto> getUserById(@PathVariable("user-id") Long userId) {
+//        return ResponseEntity.ok(usersService.getUserById(userId));
+//    }
+//
+//
+//    @ApiOperation(value = "Добавление юзера")
+//    @ApiResponses(value = {@ApiResponse(code = 200, message = "Успешно добавлено", response = UserDto.class)})
+//    @PostMapping("/users")
+//    public ResponseEntity<UserDto> addUser(@RequestBody UserDto user) {
+//        return ResponseEntity.ok(usersService.addUser(user));
+//    }
+//
+//    @PutMapping("/users/{user-id}")
+//    public ResponseEntity<UserDto> updateUser(@PathVariable("user-id") Long userId, @RequestBody UserDto user) {
+//        return ResponseEntity.ok(usersService.updateUser(userId, user));
+//    }
+//
+//    @DeleteMapping("/users/{user-id}")
+//    public ResponseEntity<?> deleteUser(@PathVariable("user-id") Long userId) {
+//        usersService.deleteUser(userId);
+//        return ResponseEntity.ok().build();
+//    }
+//}
 
+@RestController
+public class UsersController {
     @Autowired
     private UsersService usersService;
 
-
-    @GetMapping("/users")
-    @ResponseBody
-    public ResponseEntity<List<UserDto>> getAllUsers() {
-        return ResponseEntity.ok(usersService.getAllUsers());
+    @GetMapping("/user_info/{userId}")
+    public ResponseEntity<?> getUser(@PathVariable Long userId) {
+        return ResponseEntity.ok(usersService.getUser(userId));
     }
 
-    // GET users/3
-    @GetMapping("/users/{user-id}")
-    @ResponseBody
-    public ResponseEntity<UserDto> getUserById(@PathVariable("user-id") Long userId) {
-        return ResponseEntity.ok(usersService.getUserById(userId));
-    }
-
-
-    @ApiOperation(value = "Добавление юзера")
-    @ApiResponses(value = {@ApiResponse(code = 200, message = "Успешно добавлено", response = UserDto.class)})
-    @PostMapping("/users")
-    public ResponseEntity<UserDto> addUser(@RequestBody UserDto user) {
-        return ResponseEntity.ok(usersService.addUser(user));
-    }
-
-    @PutMapping("/users/{user-id}")
-    public ResponseEntity<UserDto> updateUser(@PathVariable("user-id") Long userId, @RequestBody UserDto user) {
-        return ResponseEntity.ok(usersService.updateUser(userId, user));
-    }
-
-    @DeleteMapping("/users/{user-id}")
-    public ResponseEntity<?> deleteUser(@PathVariable("user-id") Long userId) {
-        usersService.deleteUser(userId);
+    @PostMapping("/users/{user-id}/block")
+    public ResponseEntity<?> blockUser(@PathVariable("user-id") Long userId) {
+        usersService.blockUser(userId);
         return ResponseEntity.ok().build();
     }
 }

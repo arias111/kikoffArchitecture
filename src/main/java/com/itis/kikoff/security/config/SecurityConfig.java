@@ -1,6 +1,8 @@
 package com.itis.kikoff.security.config;
 
 
+import com.itis.kikoff.security.token.TokenAuthenticationFilter;
+import com.itis.kikoff.security.token.TokenAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
@@ -10,37 +12,63 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+//    @Autowired
+//    private PasswordEncoder passwordEncoder;
+//
+//    @Autowired
+//    @Qualifier("customUserDetailsService")
+//    private UserDetailsService userDetailsService;
+//
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
+//    }
+//
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http.csrf().disable();
+//        http.authorizeRequests()
+//                .antMatchers("/signUp").permitAll()
+//                .antMatchers("/users/**").hasAnyAuthority("ADMIN")
+//                .antMatchers("/personal_account").authenticated()
+//               // .antMatchers("/**").authenticated()
+//                .and()
+//                .formLogin()
+//                .loginPage("/signIn")
+//                .usernameParameter("email")
+//                .defaultSuccessUrl("/personal_account", true)
+//                .failureUrl("/signIn?error")
+//                .permitAll();
+//    }
 
     @Autowired
-    @Qualifier("customUserDetailsService")
-    private UserDetailsService userDetailsService;
+    private TokenAuthenticationFilter tokenAuthenticationFilter;
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
-    }
+    @Autowired
+    private TokenAuthenticationProvider tokenAuthenticationProvider;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-        http.authorizeRequests()
+        http.sessionManagement().disable();
+        http
+                .addFilterAt(tokenAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                .authorizeRequests()
                 .antMatchers("/signUp").permitAll()
-                .antMatchers("/users/**").hasAnyAuthority("ADMIN")
-                .antMatchers("/personal_account").authenticated()
-               // .antMatchers("/**").authenticated()
+                .antMatchers("/signOut").hasAnyAuthority()
                 .and()
-                .formLogin()
-                .loginPage("/signIn")
-                .usernameParameter("email")
-                .defaultSuccessUrl("/personal_account", true)
-                .failureUrl("/signIn?error")
-                .permitAll();
+                .sessionManagement().disable();
     }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.authenticationProvider(tokenAuthenticationProvider);
+    }
+
 }
