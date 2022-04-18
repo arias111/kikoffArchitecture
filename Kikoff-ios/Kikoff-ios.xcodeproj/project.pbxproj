@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2F0B22A40E6DA21FC212DAC1 /* Pods_Kikoff_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A968A60DBDA0B07101CD1803 /* Pods_Kikoff_ios.framework */; };
+		DE785CF7280DDEC300082E95 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785CF6280DDEC300082E95 /* AuthorizationViewController.swift */; };
+		DE785CF9280DDEDE00082E95 /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785CF8280DDEDE00082E95 /* AuthorizationRouter.swift */; };
+		DE785CFE280DDF4100082E95 /* AuthorizationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785CFD280DDF4100082E95 /* AuthorizationProvider.swift */; };
+		DE785D01280DDFC600082E95 /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D00280DDFC600082E95 /* AuthorizationAssembly.swift */; };
 		DE88F1B8280DD922009DD45D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88F1B7280DD922009DD45D /* AppDelegate.swift */; };
 		DE88F1BA280DD922009DD45D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88F1B9280DD922009DD45D /* SceneDelegate.swift */; };
-		DE88F1BC280DD922009DD45D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88F1BB280DD922009DD45D /* ViewController.swift */; };
 		DE88F1C1280DD924009DD45D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE88F1C0280DD924009DD45D /* Assets.xcassets */; };
 		DE88F1C4280DD924009DD45D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE88F1C2280DD924009DD45D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,10 +22,13 @@
 		65ADFA587C7F2E9253BA88DB /* Pods-Kikoff-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikoff-ios.release.xcconfig"; path = "Target Support Files/Pods-Kikoff-ios/Pods-Kikoff-ios.release.xcconfig"; sourceTree = "<group>"; };
 		A968A60DBDA0B07101CD1803 /* Pods_Kikoff_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kikoff_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F523ABBDDF819185979B74 /* Pods-Kikoff-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikoff-ios.debug.xcconfig"; path = "Target Support Files/Pods-Kikoff-ios/Pods-Kikoff-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		DE785CF6280DDEC300082E95 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		DE785CF8280DDEDE00082E95 /* AuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
+		DE785CFD280DDF4100082E95 /* AuthorizationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationProvider.swift; sourceTree = "<group>"; };
+		DE785D00280DDFC600082E95 /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		DE88F1B4280DD922009DD45D /* Kikoff-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kikoff-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE88F1B7280DD922009DD45D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE88F1B9280DD922009DD45D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DE88F1BB280DD922009DD45D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE88F1C0280DD924009DD45D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE88F1C3280DD924009DD45D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE88F1C5280DD924009DD45D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +63,66 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DE21241A280DDCAA00639C77 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				DE88F1B7280DD922009DD45D /* AppDelegate.swift */,
+				DE88F1B9280DD922009DD45D /* SceneDelegate.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		DE21241B280DDCAF00639C77 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DE21241C280DDCB700639C77 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				DE785CF5280DDEA300082E95 /* Authorization */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		DE21241D280DDCEB00639C77 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DE21241E280DDD0600639C77 /* BaseComponents */,
+				DE21241B280DDCAF00639C77 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DE21241E280DDD0600639C77 /* BaseComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseComponents;
+			sourceTree = "<group>";
+		};
+		DE212420280DDD2E00639C77 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE88F1C0280DD924009DD45D /* Assets.xcassets */,
+				DE88F1C2280DD924009DD45D /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DE785CF5280DDEA300082E95 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				DE785CF6280DDEC300082E95 /* AuthorizationViewController.swift */,
+				DE785CF8280DDEDE00082E95 /* AuthorizationRouter.swift */,
+				DE785CFD280DDF4100082E95 /* AuthorizationProvider.swift */,
+				DE785D00280DDFC600082E95 /* AuthorizationAssembly.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 		DE88F1AB280DD922009DD45D = {
 			isa = PBXGroup;
 			children = (
@@ -78,11 +144,10 @@
 		DE88F1B6280DD922009DD45D /* Kikoff-ios */ = {
 			isa = PBXGroup;
 			children = (
-				DE88F1B7280DD922009DD45D /* AppDelegate.swift */,
-				DE88F1B9280DD922009DD45D /* SceneDelegate.swift */,
-				DE88F1BB280DD922009DD45D /* ViewController.swift */,
-				DE88F1C0280DD924009DD45D /* Assets.xcassets */,
-				DE88F1C2280DD924009DD45D /* LaunchScreen.storyboard */,
+				DE212420280DDD2E00639C77 /* Resources */,
+				DE21241A280DDCAA00639C77 /* Root */,
+				DE21241D280DDCEB00639C77 /* Common */,
+				DE21241C280DDCB700639C77 /* Modules */,
 				DE88F1C5280DD924009DD45D /* Info.plist */,
 			);
 			path = "Kikoff-ios";
@@ -221,8 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE88F1BC280DD922009DD45D /* ViewController.swift in Sources */,
+				DE785CFE280DDF4100082E95 /* AuthorizationProvider.swift in Sources */,
+				DE785CF7280DDEC300082E95 /* AuthorizationViewController.swift in Sources */,
 				DE88F1B8280DD922009DD45D /* AppDelegate.swift in Sources */,
+				DE785D01280DDFC600082E95 /* AuthorizationAssembly.swift in Sources */,
+				DE785CF9280DDEDE00082E95 /* AuthorizationRouter.swift in Sources */,
 				DE88F1BA280DD922009DD45D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
