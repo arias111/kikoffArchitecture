@@ -15,6 +15,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -39,7 +40,7 @@ public class User {
 
     private LocalDateTime creationDate;
 
-//    private List<String> tokens;
+    //    private List<String> tokens;
     private Boolean isDeleted;
     @Enumerated(value = EnumType.STRING)
     private Role role;
@@ -53,18 +54,4 @@ public class User {
     private PersonalAccount personalAccount;
 
     private String confirmCode;
-
-    public boolean isActive() {
-        return this.state == State.ACTIVE;
-    }
-
-    public boolean isBanned() {
-        return this.state == State.BANNED;
-    }
-
-    public boolean isAdmin() {
-        return this.role == Role.ADMIN;
-    }
-
-
 }
