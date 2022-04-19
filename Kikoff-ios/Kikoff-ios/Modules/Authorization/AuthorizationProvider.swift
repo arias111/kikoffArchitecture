@@ -7,7 +7,11 @@
 
 import Foundation
 
-protocol IAuthorizationProvider {}
+protocol IAuthorizationProvider {
+    func forgotPassword()
+    func createAccount()
+    func auth(with model: AuthFormModel)
+}
 
 final class AuthorizationProvider: IAuthorizationProvider {
     weak var view: IAuthorizationView?
@@ -16,4 +20,10 @@ final class AuthorizationProvider: IAuthorizationProvider {
     init(router: AuthorizationRouter) {
         self.router = router
     }
+    
+    func forgotPassword() {}
+    
+    func createAccount() {}
+    
+    func auth(with model: AuthFormModel) {}
 }

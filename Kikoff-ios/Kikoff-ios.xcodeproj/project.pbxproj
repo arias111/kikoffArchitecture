@@ -12,6 +12,19 @@
 		DE785CF9280DDEDE00082E95 /* AuthorizationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785CF8280DDEDE00082E95 /* AuthorizationRouter.swift */; };
 		DE785CFE280DDF4100082E95 /* AuthorizationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785CFD280DDF4100082E95 /* AuthorizationProvider.swift */; };
 		DE785D01280DDFC600082E95 /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D00280DDFC600082E95 /* AuthorizationAssembly.swift */; };
+		DE785D04280DEB3C00082E95 /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D03280DEB3C00082E95 /* ScrollableStackView.swift */; };
+		DE785D06280DEC2600082E95 /* UIView+SnapkitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D05280DEC2600082E95 /* UIView+SnapkitUtils.swift */; };
+		DE785D08280DF01F00082E95 /* RootViewContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D07280DF01F00082E95 /* RootViewContainable.swift */; };
+		DE785D0C280DF62200082E95 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D0B280DF62200082E95 /* NavigationBar.swift */; };
+		DE785D0F280DF6C400082E95 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D0E280DF6C400082E95 /* Colors.swift */; };
+		DE785D11280DF7A000082E95 /* UINavigationController+Convience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D10280DF7A000082E95 /* UINavigationController+Convience.swift */; };
+		DE785D13280DFBF600082E95 /* UIStackView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D12280DFBF600082E95 /* UIStackView+Utils.swift */; };
+		DE785D15280DFD7500082E95 /* InsettingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D14280DFD7500082E95 /* InsettingTextField.swift */; };
+		DE785D18280DFF7700082E95 /* AuthorizationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D17280DFF7700082E95 /* AuthorizationForm.swift */; };
+		DE785D1C280E059C00082E95 /* StylingField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D1B280E059C00082E95 /* StylingField.swift */; };
+		DE785D20280E060400082E95 /* VoidClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D1F280E060400082E95 /* VoidClosure.swift */; };
+		DE785D22280E1A1400082E95 /* StylingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D21280E1A1400082E95 /* StylingButton.swift */; };
+		DE785D24280E1A2C00082E95 /* TappableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D23280E1A2C00082E95 /* TappableButton.swift */; };
 		DE88F1B8280DD922009DD45D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88F1B7280DD922009DD45D /* AppDelegate.swift */; };
 		DE88F1BA280DD922009DD45D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88F1B9280DD922009DD45D /* SceneDelegate.swift */; };
 		DE88F1C1280DD924009DD45D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE88F1C0280DD924009DD45D /* Assets.xcassets */; };
@@ -26,6 +39,19 @@
 		DE785CF8280DDEDE00082E95 /* AuthorizationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRouter.swift; sourceTree = "<group>"; };
 		DE785CFD280DDF4100082E95 /* AuthorizationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationProvider.swift; sourceTree = "<group>"; };
 		DE785D00280DDFC600082E95 /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
+		DE785D03280DEB3C00082E95 /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
+		DE785D05280DEC2600082E95 /* UIView+SnapkitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapkitUtils.swift"; sourceTree = "<group>"; };
+		DE785D07280DF01F00082E95 /* RootViewContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewContainable.swift; sourceTree = "<group>"; };
+		DE785D0B280DF62200082E95 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		DE785D0E280DF6C400082E95 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		DE785D10280DF7A000082E95 /* UINavigationController+Convience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Convience.swift"; sourceTree = "<group>"; };
+		DE785D12280DFBF600082E95 /* UIStackView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utils.swift"; sourceTree = "<group>"; };
+		DE785D14280DFD7500082E95 /* InsettingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsettingTextField.swift; sourceTree = "<group>"; };
+		DE785D17280DFF7700082E95 /* AuthorizationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationForm.swift; sourceTree = "<group>"; };
+		DE785D1B280E059C00082E95 /* StylingField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylingField.swift; sourceTree = "<group>"; };
+		DE785D1F280E060400082E95 /* VoidClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidClosure.swift; sourceTree = "<group>"; };
+		DE785D21280E1A1400082E95 /* StylingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylingButton.swift; sourceTree = "<group>"; };
+		DE785D23280E1A2C00082E95 /* TappableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableButton.swift; sourceTree = "<group>"; };
 		DE88F1B4280DD922009DD45D /* Kikoff-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kikoff-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE88F1B7280DD922009DD45D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE88F1B9280DD922009DD45D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +101,10 @@
 		DE21241B280DDCAF00639C77 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DE785D05280DEC2600082E95 /* UIView+SnapkitUtils.swift */,
+				DE785D10280DF7A000082E95 /* UINavigationController+Convience.swift */,
+				DE785D12280DFBF600082E95 /* UIStackView+Utils.swift */,
+				DE785D1F280E060400082E95 /* VoidClosure.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -99,6 +129,8 @@
 		DE21241E280DDD0600639C77 /* BaseComponents */ = {
 			isa = PBXGroup;
 			children = (
+				DE785D0D280DF6BB00082E95 /* Colors */,
+				DE785D02280DEB2F00082E95 /* UI */,
 			);
 			path = BaseComponents;
 			sourceTree = "<group>";
@@ -115,12 +147,43 @@
 		DE785CF5280DDEA300082E95 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				DE785D16280DFF6C00082E95 /* Views */,
 				DE785CF6280DDEC300082E95 /* AuthorizationViewController.swift */,
 				DE785CF8280DDEDE00082E95 /* AuthorizationRouter.swift */,
 				DE785CFD280DDF4100082E95 /* AuthorizationProvider.swift */,
 				DE785D00280DDFC600082E95 /* AuthorizationAssembly.swift */,
 			);
 			path = Authorization;
+			sourceTree = "<group>";
+		};
+		DE785D02280DEB2F00082E95 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DE785D03280DEB3C00082E95 /* ScrollableStackView.swift */,
+				DE785D07280DF01F00082E95 /* RootViewContainable.swift */,
+				DE785D0B280DF62200082E95 /* NavigationBar.swift */,
+				DE785D14280DFD7500082E95 /* InsettingTextField.swift */,
+				DE785D1B280E059C00082E95 /* StylingField.swift */,
+				DE785D21280E1A1400082E95 /* StylingButton.swift */,
+				DE785D23280E1A2C00082E95 /* TappableButton.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		DE785D0D280DF6BB00082E95 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				DE785D0E280DF6C400082E95 /* Colors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		DE785D16280DFF6C00082E95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE785D17280DFF7700082E95 /* AuthorizationForm.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DE88F1AB280DD922009DD45D = {
@@ -286,10 +349,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE785D08280DF01F00082E95 /* RootViewContainable.swift in Sources */,
+				DE785D0F280DF6C400082E95 /* Colors.swift in Sources */,
+				DE785D15280DFD7500082E95 /* InsettingTextField.swift in Sources */,
 				DE785CFE280DDF4100082E95 /* AuthorizationProvider.swift in Sources */,
+				DE785D18280DFF7700082E95 /* AuthorizationForm.swift in Sources */,
 				DE785CF7280DDEC300082E95 /* AuthorizationViewController.swift in Sources */,
+				DE785D11280DF7A000082E95 /* UINavigationController+Convience.swift in Sources */,
+				DE785D20280E060400082E95 /* VoidClosure.swift in Sources */,
+				DE785D04280DEB3C00082E95 /* ScrollableStackView.swift in Sources */,
+				DE785D06280DEC2600082E95 /* UIView+SnapkitUtils.swift in Sources */,
+				DE785D1C280E059C00082E95 /* StylingField.swift in Sources */,
+				DE785D0C280DF62200082E95 /* NavigationBar.swift in Sources */,
+				DE785D24280E1A2C00082E95 /* TappableButton.swift in Sources */,
 				DE88F1B8280DD922009DD45D /* AppDelegate.swift in Sources */,
 				DE785D01280DDFC600082E95 /* AuthorizationAssembly.swift in Sources */,
+				DE785D22280E1A1400082E95 /* StylingButton.swift in Sources */,
+				DE785D13280DFBF600082E95 /* UIStackView+Utils.swift in Sources */,
 				DE785CF9280DDEDE00082E95 /* AuthorizationRouter.swift in Sources */,
 				DE88F1BA280DD922009DD45D /* SceneDelegate.swift in Sources */,
 			);
