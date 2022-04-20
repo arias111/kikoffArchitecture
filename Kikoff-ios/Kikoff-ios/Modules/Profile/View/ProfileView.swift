@@ -41,10 +41,9 @@ protocol ProfileViewDelegate: AnyObject {
 }
 
 final class ProfileView: UIView {
-	private let appearance = Appearance()	
 	weak var delegate: ProfileViewDelegate?
+	private let appearance = Appearance()
 
-	
 	private lazy var avatarImage: UIImageView = {
 		let imageView = UIImageView()
 		imageView.image = UIImage(named: appearance.imageTitle)
