@@ -11,6 +11,7 @@ import UIKit
 final class ScrollableStackView: UIView {
     struct Style {
         let contentInsets: UIEdgeInsets
+        let spacing: CGFloat
     }
     
     private let style: Style
@@ -34,7 +35,7 @@ final class ScrollableStackView: UIView {
     
     // MARK: Init
     
-    init(style: Style = .default) {
+    init(style: Style = Style()) {
         self.style = style
         super.init(frame: .zero)
         setupView()
@@ -64,15 +65,19 @@ final class ScrollableStackView: UIView {
         containerView.addSubview(stackView) {
             $0.edges.equalToSuperview().inset(style.contentInsets)
         }
+        
+        stackView.spacing = style.spacing
     }
 }
 
 // MARK: - Style + Default
 
 extension ScrollableStackView.Style {
-    static var `default`: ScrollableStackView.Style {
-        ScrollableStackView.Style(
-            contentInsets: .init(top: 16, left: 16, bottom: 0, right: 16)
-        )
+    init(
+        insets: UIEdgeInsets = .init(top: 16, left: 16, bottom: 0, right: 16),
+        spacing: CGFloat = 15
+    ) {
+        self.contentInsets = insets
+        self.spacing = spacing
     }
 }

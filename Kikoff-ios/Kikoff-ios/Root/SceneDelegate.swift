@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let viewController = AuthorizationAssembly.assemble()
+        let viewController = AuthorizationViewController()
         
         window?.rootViewController = UINavigationController(
             navigationBar: NavigationBar.self,

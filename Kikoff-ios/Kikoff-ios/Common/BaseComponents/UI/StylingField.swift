@@ -62,16 +62,8 @@ final class StylingField: InsettingTextField {
 
 // MARK: - Styles
 
-extension StylingField.Style {
-    static var username: Self {
-        auth(placeholder: "Username")
-    }
-    
-    static var password: Self {
-        auth(placeholder: "Password", isSecure: true)
-    }
-    
-    private static func auth(placeholder: String, isSecure: Bool = false) -> Self {
+extension StylingField.Style {    
+    static func auth(placeholder: String, isSecure: Bool = false) -> Self {
         .init(
             placeholder: placeholder,
             isSecure: isSecure,

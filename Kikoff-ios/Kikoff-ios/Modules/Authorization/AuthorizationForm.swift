@@ -15,8 +15,8 @@ struct AuthFormModel {
 final class AuthorizationForm: UIView {
     // MARK: Subviews
     
-    private lazy var usernameField = StylingField(style: .username)
-    private lazy var passwordField = StylingField(style: .password)
+    private lazy var usernameField = StylingField(style: .auth(placeholder: "Username"))
+    private lazy var passwordField = StylingField(style: .auth(placeholder: "Password"))
     private lazy var authButton = StylingButton(style: .primary(title: "Authorize"))
     private lazy var createAccountButton = StylingButton(style: .suggestion(title: "CREATE ACCOUNT"))
     
@@ -41,12 +41,17 @@ final class AuthorizationForm: UIView {
     func onAuthTapped(_ onTap: @escaping (AuthFormModel) -> Void) {
         authButton.enableTapping { [unowned self] in
             guard
-                let username = usernameField.text,
-                let password = passwordField.text
+                let username = usernameField.nonEmptyText,
+                let password = passwordField.nonEmptyText
             else { return }
             
             onTap(AuthFormModel(username: username, password: password))
         }
+    }
+    
+    func reset() {
+        usernameField.text = nil
+        passwordField.text = nil
     }
     
     // MARK: Helpers
