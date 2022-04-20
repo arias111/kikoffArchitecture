@@ -15,22 +15,6 @@ class ProfileViewController: UIViewController {
 		super.viewDidLoad()
 		customView.delegate = self
 		title = "Nail Galiev"
-		setupNavController()
-	}
-	
-	func setupNavController() {
-		let buttonAppearance = UIBarButtonItemAppearance()
-		buttonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.darkGray]
-		
-		let appearance = UINavigationBarAppearance()
-		appearance.buttonAppearance = buttonAppearance
-		navigationController?.navigationBar.compactAppearance = appearance
-		navigationController?.navigationBar.standardAppearance = appearance
-		navigationController?.navigationBar.scrollEdgeAppearance = appearance
-		navigationController?.navigationBar.prefersLargeTitles = true
-	}
-
-	@objc private func backButtonPressed() {
 	}
 	
 	override func loadView() {

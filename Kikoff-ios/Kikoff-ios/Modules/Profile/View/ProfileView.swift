@@ -41,7 +41,9 @@ protocol ProfileViewDelegate: AnyObject {
 }
 
 final class ProfileView: UIView {
-	private let appearance = Appearance()
+	private let appearance = Appearance()	
+	weak var delegate: ProfileViewDelegate?
+
 	
 	private lazy var avatarImage: UIImageView = {
 		let imageView = UIImageView()
@@ -161,10 +163,8 @@ final class ProfileView: UIView {
 		saveImage(image: image)
 		loadImage()
 	}
-	
-	weak var delegate: ProfileViewDelegate?
-	
-	@objc func editPressed() {
+		
+	@objc private func editPressed() {
 		delegate?.editProfile()
 	}
 }
