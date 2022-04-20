@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProfileUpdateDto {
-    private String name;
+    private String username;
     private String password;
 }

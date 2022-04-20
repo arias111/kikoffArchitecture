@@ -6,39 +6,42 @@ import com.itis.kikoff.models.auth.User;
 import com.itis.kikoff.security.JwtHelper;
 import com.itis.kikoff.services.users.UsersService;
 import com.itis.kikoff.utils.ResponseCreator;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping(path = "/user")
-@AllArgsConstructor
 public class UserController extends ResponseCreator {
 
-    private final JwtHelper jwtHelper;
-    private final UsersService userService;
+    @Autowired
+    private UsersService userService;
 
-    @GetMapping
-    ResponseEntity getProfile(@RequestHeader String authorization) {
-        UserDto dto = userService.getUserProfileInfo(authorization);
-        return createGoodResponse(dto);
+    @GetMapping("/users")
+    public ResponseEntity<List<UserDto>> getUsers(@RequestHeader("X-TOKEN") String token) {
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 
-    @DeleteMapping
-    ResponseEntity deleteProfile(@RequestHeader String authorization) {
-        String token = JwtHelper.getTokenFromHeader(authorization);
-        User user = userService.getByEmail(jwtHelper.getEmailFromToken(token));
-        userService.delete(user);
-        return createGoodResponse("Deleted");
+    @ApiOperation(value = "Добавление юзера")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "Успешно добавлено", response = UserDto.class)})
+    @PostMapping("/users")
+    public ResponseEntity<UserDto> addUser(@RequestBody UserDto user) {
+        return ResponseEntity.ok(userService.addUser(user));
     }
 
-    @PutMapping(path = "/change")
-    ResponseEntity changeUserName(@RequestHeader String authorization,@RequestBody ProfileUpdateDto profileUpdateDto) {
-        return userService.changeUserName(authorization, profileUpdateDto);
+    @PutMapping("/users/{user-id}")
+    public ResponseEntity<UserDto> updateUser(@PathVariable("user-id") Long userId, @RequestBody UserDto user) {
+        return ResponseEntity.ok(userService.updateUser(userId, user));
     }
 
-    @PostMapping(path = "/change")
-    ResponseEntity changePassword(@RequestHeader String authorization,@RequestBody ProfileUpdateDto profileUpdateDto) {
-        return userService.changePassword(authorization, profileUpdateDto);
+    @DeleteMapping("/users/{user-id}")
+    public ResponseEntity<?> deleteUser(@PathVariable("user-id") Long userId) {
+        userService.deleteUser(userId);
+        return ResponseEntity.ok().build();
     }
 }

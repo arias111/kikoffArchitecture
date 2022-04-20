@@ -20,3 +20,10 @@ Content-Type: application/json
   "email": "ilzira2001@bk.ru",
   "password": "test123"
 }
+
+###
+GET http://localhost:8081/user
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJlbWFpbCI6IjEyM0AxMjMiLCJwYXNzd29yZCI6IiQyYSQxMCRZQ25kQ3ZQTGtMVDhLenpZWGQ4cE1PbzZBT2g0ZlRpSjVySUUwUVJsTlFGVVN4U0tJczczMiJ9.sRPwrB7xU36fo49a0WZjB1l52fTfO3fLVOC0f8jd2Z6z2ofGKsnJQUKkBvbvGTNc5d-8BaG1ZZeSccyKN9kPMw
+
+###

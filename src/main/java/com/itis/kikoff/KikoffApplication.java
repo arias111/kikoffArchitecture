@@ -13,31 +13,34 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class KikoffApplication {
 
-    @Value("${jwt.secret}")
-    private String secret;
+//    @Value("${jwt.secret}")
+//    private String secret;
+//
+//    public static void main(String[] args) {
+//        SpringApplication.run(KikoffApplication.class, args);
+//    }
+//
+//    @Bean
+//    public PasswordEncoder passwordEncoder() {
+//        return new BCryptPasswordEncoder();
+//    }
+//
+//    @Bean
+//    public RestTemplate restTemplate() {
+//        return new RestTemplate();
+//    }
+//
+//    @Bean
+//    public ModelMapper modelMapper() {
+//        return new ModelMapper();
+//    }
+//
+//    @Bean
+//    public Algorithm algorithm() {
+//        return Algorithm.HMAC256(secret);
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(KikoffApplication.class, args);
     }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
-
-    @Bean
-    public ModelMapper modelMapper() {
-        return new ModelMapper();
-    }
-
-    @Bean
-    public Algorithm algorithm() {
-        return Algorithm.HMAC256(secret);
-    }
-
 }

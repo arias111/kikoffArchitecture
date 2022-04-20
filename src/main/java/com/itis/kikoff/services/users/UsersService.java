@@ -1,29 +1,18 @@
 package com.itis.kikoff.services.users;
-import com.itis.kikoff.dto.ProfileUpdateDto;
+
 import com.itis.kikoff.dto.UserDto;
 import com.itis.kikoff.models.auth.User;
-import org.springframework.http.ResponseEntity;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface UsersService {
-    UserDto save(User user);
-
     User getByEmail(String email);
-
-    UserDto getByAuthToken(String authToken);
-
     Optional<User> findOneByEmail(String email);
+    List<UserDto> getAllUsers();
+    UserDto addUser(UserDto user);
 
-    Optional<User> findOneById(Long id);
+    UserDto updateUser(Long userId, UserDto user);
 
-    boolean update(User user);
-
-    boolean delete(User user);
-
-    UserDto getUserProfileInfo(String authorization);
-
-    ResponseEntity changePassword(String authorization, ProfileUpdateDto profileUpdateDto);
-
-    ResponseEntity changeUserName(String authorization, ProfileUpdateDto profileUpdateDto);
+    void deleteUser(Long userId);
 }

@@ -29,8 +29,6 @@ public class AuthController extends ResponseCreator {
     @Autowired
     private Validator validator;
 
-    private boolean isFirst = true;
-
     @PostMapping("/sign-up")
     ResponseEntity registrationUser(@RequestBody SignUpDto signUpDto) {
         Optional<ErrorEntity> errorEntity = validator.getUserRegisterFormError(signUpDto);

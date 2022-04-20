@@ -40,7 +40,6 @@ public class User {
 
     private LocalDateTime creationDate;
 
-    //    private List<String> tokens;
     private Boolean isDeleted;
     @Enumerated(value = EnumType.STRING)
     private Role role;
@@ -53,5 +52,4 @@ public class User {
     @OneToOne(mappedBy = "user")
     private PersonalAccount personalAccount;
 
-    private String confirmCode;
 }
