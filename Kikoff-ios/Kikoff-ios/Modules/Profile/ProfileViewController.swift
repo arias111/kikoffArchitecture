@@ -16,12 +16,6 @@ class ProfileViewController: UIViewController {
 		customView.delegate = self
 		title = "Nail Galiev"
 		setupNavController()
-		navigationItem.rightBarButtonItem = UIBarButtonItem(
-			title: "Back",
-			style: .plain,
-			target: self,
-			action: #selector(backButtonPressed)
-		)
 	}
 	
 	func setupNavController() {
@@ -30,7 +24,6 @@ class ProfileViewController: UIViewController {
 		
 		let appearance = UINavigationBarAppearance()
 		appearance.buttonAppearance = buttonAppearance
-		navigationController?.navigationBar.backgroundColor = UIColor(named: "profileNavBackground")
 		navigationController?.navigationBar.compactAppearance = appearance
 		navigationController?.navigationBar.standardAppearance = appearance
 		navigationController?.navigationBar.scrollEdgeAppearance = appearance

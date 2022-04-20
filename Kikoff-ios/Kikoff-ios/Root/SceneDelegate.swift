@@ -9,6 +9,7 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+	let tokenProvider = TokenProvider()
 
     func scene(
         _ scene: UIScene,
@@ -18,7 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let viewController = AuthorizationViewController()
+		let viewController: UIViewController
+		if tokenProvider.token == nil {
+			viewController = AuthorizationViewController()
+		} else {
+			viewController = ProfileViewController()
+		}
         
         window?.rootViewController = UINavigationController(
             navigationBar: NavigationBar.self,
