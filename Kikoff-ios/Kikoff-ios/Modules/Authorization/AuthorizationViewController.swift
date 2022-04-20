@@ -62,5 +62,8 @@ final class AuthorizationViewController: UIViewController, RootViewContainable, 
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    private func showProfile() {}
+    private func showProfile() {
+		let profileVc = ProfileViewController()
+		navigationController?.pushViewController(profileVc, animated: true)
+	}
 }
