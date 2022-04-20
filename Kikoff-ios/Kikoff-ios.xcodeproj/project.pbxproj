@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F0B22A40E6DA21FC212DAC1 /* Pods_Kikoff_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A968A60DBDA0B07101CD1803 /* Pods_Kikoff_ios.framework */; };
+		CE3C9E0F28109E060089D224 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C9E0E28109E060089D224 /* ProfileView.swift */; };
+		CE3C9E112810A04B0089D224 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C9E102810A04B0089D224 /* ProfileViewController.swift */; };
 		DE785CF7280DDEC300082E95 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785CF6280DDEC300082E95 /* AuthorizationViewController.swift */; };
 		DE785D04280DEB3C00082E95 /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D03280DEB3C00082E95 /* ScrollableStackView.swift */; };
 		DE785D06280DEC2600082E95 /* UIView+SnapkitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D05280DEC2600082E95 /* UIView+SnapkitUtils.swift */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		65ADFA587C7F2E9253BA88DB /* Pods-Kikoff-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikoff-ios.release.xcconfig"; path = "Target Support Files/Pods-Kikoff-ios/Pods-Kikoff-ios.release.xcconfig"; sourceTree = "<group>"; };
 		A968A60DBDA0B07101CD1803 /* Pods_Kikoff_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kikoff_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE3C9E0E28109E060089D224 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		CE3C9E102810A04B0089D224 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D9F523ABBDDF819185979B74 /* Pods-Kikoff-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikoff-ios.debug.xcconfig"; path = "Target Support Files/Pods-Kikoff-ios/Pods-Kikoff-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		DE785CF6280DDEC300082E95 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		DE785D03280DEB3C00082E95 /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,39 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE3C9E0A28109D9D0089D224 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CE3C9E0D28109DF50089D224 /* View */,
+				CE3C9E0C28109DEE0089D224 /* Service */,
+				CE3C9E0B28109DE80089D224 /* Model */,
+				CE3C9E102810A04B0089D224 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CE3C9E0B28109DE80089D224 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE3C9E0C28109DEE0089D224 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CE3C9E0D28109DF50089D224 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE3C9E0E28109E060089D224 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DE21241A280DDCAA00639C77 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +154,7 @@
 		DE21241C280DDCB700639C77 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CE3C9E0A28109D9D0089D224 /* Profile */,
 				DE785D25280F326300082E95 /* Registration */,
 				DE785CF5280DDEA300082E95 /* Authorization */,
 			);
@@ -378,11 +416,13 @@
 				DE785D1C280E059C00082E95 /* StylingField.swift in Sources */,
 				DE785D0C280DF62200082E95 /* NavigationBar.swift in Sources */,
 				DE785D24280E1A2C00082E95 /* TappableButton.swift in Sources */,
+				CE3C9E112810A04B0089D224 /* ProfileViewController.swift in Sources */,
 				DE785D28280F32E800082E95 /* UsernamePassStepViewController.swift in Sources */,
 				DE88F1B8280DD922009DD45D /* AppDelegate.swift in Sources */,
 				DE785D22280E1A1400082E95 /* StylingButton.swift in Sources */,
 				DE785D13280DFBF600082E95 /* UIStackView+Utils.swift in Sources */,
 				DE785D2A280F3A4100082E95 /* PersonalInfoPassStepViewController.swift in Sources */,
+				CE3C9E0F28109E060089D224 /* ProfileView.swift in Sources */,
 				DE88F1BA280DD922009DD45D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

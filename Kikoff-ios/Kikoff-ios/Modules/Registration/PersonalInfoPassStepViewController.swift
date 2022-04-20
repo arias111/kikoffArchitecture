@@ -103,7 +103,8 @@ final class PersonalInfoPassStepViewController: UIViewController, RootViewContai
         )
         
         service.send(form: form) { [weak self] in
-            self?.navigationController?.setViewControllers([], animated: true)
+		
+            self?.navigationController?.setViewControllers([ProfileViewController()], animated: true)
         }
     }
 }
