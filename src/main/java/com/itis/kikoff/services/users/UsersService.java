@@ -13,6 +13,7 @@ public interface UsersService {
     UserDto addUser(UserDto user);
 
     UserDto updateUser(Long userId, UserDto user);
-
+  //  UserDto getUserProfileInfo(String token);
     void deleteUser(Long userId);
+    User getUser(Long userId);
 }

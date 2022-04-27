@@ -44,4 +44,16 @@ public class UserController extends ResponseCreator {
         userService.deleteUser(userId);
         return ResponseEntity.ok().build();
     }
+
+//    @GetMapping("/profile")
+//    public ResponseEntity<UserDto> getProfile(@RequestHeader("X-TOKEN") String token){
+//        UserDto dto = userService.getUserProfileInfo(token);
+//        return createGoodResponse(dto);
+//    }
+
+    @GetMapping("/user_info/{userId}")
+    public ResponseEntity<?> getUser(@PathVariable Long userId) {
+        return ResponseEntity.ok(userService.getUser(userId));
+    }
+
 }

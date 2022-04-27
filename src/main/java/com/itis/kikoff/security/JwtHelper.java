@@ -73,4 +73,18 @@ public class JwtHelper {
         }
         return null;
     }
+
+    public static String getTokenFromHeader(String bearer) {
+        if (hasText(bearer) && bearer.startsWith("Bearer ")) {
+            return bearer.substring(7);
+        }
+        return null;
+    }
+
+    public User getUserFromHeader(String authorization) {
+        String token = JwtHelper.getTokenFromHeader(authorization);
+        String emailFromToken = getEmailFromToken(token);
+        return userRepository.findByEmail(emailFromToken)
+                .orElseThrow(NotFoundException::new);
+    }
 }

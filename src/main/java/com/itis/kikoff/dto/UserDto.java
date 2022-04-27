@@ -21,7 +21,7 @@ public class UserDto {
     private String firstName;
     private String lastName;
     private String patronymic;
-
+    private String password;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
 
