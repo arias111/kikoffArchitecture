@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Data
@@ -11,23 +12,21 @@ import java.util.Objects;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "bill_product")
-public class BillProduct {
+@Table(name = "category")
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    @JoinColumn(name = "bill_id", referencedColumnName = "id")
-    private Bill bill;
-    @ManyToOne
-    @JoinColumn(name = "product_id", referencedColumnName = "id")
-    private Product product;
+    private String name;
+    @OneToMany(mappedBy = "categories")
+    @ToString.Exclude
+    private List<Product> products;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        BillProduct that = (BillProduct) o;
+        Category that = (Category) o;
         return id != null && Objects.equals(id, that.id);
     }
 

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="first_template" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b72c2c80-9324-4359-a0b4-1feff9ba2ede">
+    <property name="ireport.zoom" value="1.6105100000000012"/>
+    <property name="ireport.x" value="5"/>
+    <property name="ireport.y" value="0"/>
+    <style name="Default" isDefault="true" pdfFontName="D:\Java\Projects\kikoffArchitecture\backend\src\test\java\com\itis\kikoff\font\ARIAL.TTF" pdfEncoding="Cp1251"/>
+    <parameter name="DATE" class="java.util.Date"/>
+    <field name="head" class="java.lang.String"/>
+    <field name="module" class="java.lang.String"/>
+    <field name="actual" class="java.lang.String"/>
+    <field name="expected" class="java.lang.String"/>
+    <title>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="492" height="20" uuid="eb16ce83-eea5-4eca-b6a2-c14149019045"/>
+                <textElement textAlignment="Right"/>
+                <textFieldExpression><![CDATA[$P{DATE}]]></textFieldExpression>
+                <patternExpression><![CDATA["dd.MM.yyyy HH:mm:ss"]]></patternExpression>
+            </textField>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="20">
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="0" width="200" height="20" backcolor="#F8F8F8" uuid="81c1007d-728f-49fc-9d68-2e081df49fe9"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Краткая информация]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="200" y="0" width="90" height="20" backcolor="#F8F8F8" uuid="ac43c075-96c1-406c-92d3-0d0a96d9a47f"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Модуль]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="290" y="0" width="60" height="20" backcolor="#F8F8F8" uuid="ca4775b1-ff08-4064-afc1-ce97e10c9d21"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Фактический результат]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="350" y="0" width="200" height="20" backcolor="#F8F8F8" uuid="1ca79763-a681-4487-bb96-9e7e30e2d4fb"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Ожидаемый результат]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="200" height="20" uuid="1adc41ce-7c09-46fe-960a-dff145ad7e50"/>
+                <box>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <paragraph leftIndent="5"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{head}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="200" y="0" width="90" height="20" uuid="2f5d59ad-6924-492a-b5c4-f9705cc23650"/>
+                <box>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement verticalAlignment="Middle">
+                    <paragraph leftIndent="5"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{module}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="290" y="0" width="60" height="20" uuid="7f824851-c67d-41c9-ba98-6ab57aa00d47"/>
+                <box>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <paragraph rightIndent="5"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{actual}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="350" y="0" width="200" height="20" uuid="fa57fddc-8e5e-48e2-aed6-3e447277b9d9"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <paragraph rightIndent="5"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{expected}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>
