@@ -7,8 +7,8 @@
 
 import UIKit
 
-struct AuthFormModel {
-    let username: String
+struct AuthFormModel: Encodable {
+    let email: String
     let password: String
 }
 
@@ -41,11 +41,11 @@ final class AuthorizationForm: UIView {
     func onAuthTapped(_ onTap: @escaping (AuthFormModel) -> Void) {
         authButton.enableTapping { [unowned self] in
             guard
-                let username = usernameField.nonEmptyText,
+                let email = usernameField.nonEmptyText,
                 let password = passwordField.nonEmptyText
             else { return }
             
-            onTap(AuthFormModel(username: username, password: password))
+            onTap(AuthFormModel(email: email, password: password))
         }
     }
     
