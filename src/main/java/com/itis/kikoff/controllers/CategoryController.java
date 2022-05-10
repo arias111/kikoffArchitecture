@@ -22,11 +22,6 @@ public class CategoryController {
         return ResponseEntity.ok(categoryService.getAll());
     }
 
-//    @PostMapping("/categories/get")
-//    public ResponseEntity<List<ProductRespDto>> getProducts(@RequestHeader("X-TOKEN") String token, @RequestBody CategoryIdDto categoryIdDto) {
-//        return ResponseEntity.ok(categoryService.getProducts(categoryIdDto));
-//    }
-
     @GetMapping("/categories/get/{category-id}")
     public ResponseEntity<List<ProductRespDto>> getProducts(@RequestHeader("X-TOKEN") String token, @PathVariable("category-id") Long categoryId) {
         return ResponseEntity.ok(categoryService.getProducts(categoryId));

@@ -31,11 +31,6 @@ public class ProductAndBasketController {
         return ResponseEntity.ok("");
     }
 
-//    @PostMapping("/basket/product/getProducts")
-//    public ResponseEntity<List<ProductDto>> getProductsFromBasket(@RequestHeader("X-TOKEN") String token, @RequestBody BasketIdDto basketIdDto) {
-//        return ResponseEntity.ok(productAndBasketService.getProductsFromBasket(basketIdDto));
-//    }
-
     @GetMapping("/basket/product/getProducts/{basket-id}")
     public ResponseEntity<List<ProductDto>> getProducts(@RequestHeader("X-TOKEN") String token, @PathVariable("basket-id") Long basketId) {
         return ResponseEntity.ok(productAndBasketService.getProductsFromBasket(basketId));

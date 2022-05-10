@@ -17,11 +17,6 @@ public class BasketController {
     @Autowired
     private BasketService basketService;
 
-//    @PostMapping("/basket/get")
-//    public ResponseEntity<BasketDto> getBasket(@RequestHeader("X-TOKEN") String token, @RequestBody BasketIdDto basketIdDto) {
-//        return ResponseEntity.ok(basketService.getBasket(basketIdDto));
-//    }
-
     @GetMapping("/basket/get/{basket-id}")
     public ResponseEntity<BasketDto> getProducts(@RequestHeader("X-TOKEN") String token, @PathVariable("basket-id") Long basketId) {
         return ResponseEntity.ok(basketService.getBasket(basketId));

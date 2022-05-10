@@ -38,11 +38,6 @@ public class ProductController {
         return ResponseEntity.ok("");
     }
 
-//    @PostMapping("/product/getProduct")
-//    public ResponseEntity<ProductDto> getProduct(@RequestHeader("X-TOKEN") String token, @RequestBody ProductIdDto productIdDto) {
-//        return ResponseEntity.ok(productService.getProduct(productIdDto.getProductId()));
-//    }
-
     @GetMapping("/product/getProducts/{product-id}")
     public ResponseEntity<ProductDto> getProducts(@RequestHeader("X-TOKEN") String token, @PathVariable("product-id") Long productId) {
         return ResponseEntity.ok(productService.getProduct(productId));
