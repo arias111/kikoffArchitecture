@@ -6,7 +6,7 @@ import com.itis.kikoff.models.dto.BasketProductDto;
 import com.itis.kikoff.models.dto.ProductIdDto;
 
 public interface BasketService {
-    BasketDto getBasket(BasketIdDto basketIdDto);
+    BasketDto getBasket(Long id);
     BasketIdDto createBasket(BasketDto basketDto);
     void deleteBasket(BasketIdDto basketIdDto);
 }

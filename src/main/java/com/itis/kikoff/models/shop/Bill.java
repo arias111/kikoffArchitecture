@@ -28,7 +28,7 @@ public class Bill {
     private Integer price;
     private LocalDateTime buyingDate;
     @OneToMany(mappedBy = "bill")
-    @ToString.Exclude
+    //@ToString.Exclude
     private List<BillProduct> billProduct;
     @ManyToOne
     @JoinColumn(name = "address_id", referencedColumnName = "id")

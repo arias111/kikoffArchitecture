@@ -19,7 +19,7 @@ public class Category {
     private Long id;
     private String name;
     @OneToMany(mappedBy = "categories")
-    @ToString.Exclude
+    //@ToString.Exclude
     private List<Product> products;
 
     @Override

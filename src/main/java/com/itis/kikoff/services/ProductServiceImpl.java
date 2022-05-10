@@ -1,6 +1,8 @@
 package com.itis.kikoff.services;
 
 import com.itis.kikoff.models.dto.ProductDto;
+import com.itis.kikoff.models.dto.ProductIdDto;
+import com.itis.kikoff.models.dto.ProductRespDto;
 import com.itis.kikoff.models.shop.Category;
 import com.itis.kikoff.models.shop.Product;
 import com.itis.kikoff.repositories.BasketProductRepository;
@@ -41,9 +43,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void deleteProduct(ProductDto productDto) {
+    public void deleteProduct(ProductIdDto productIdDto) {
         Product product;
-        Optional<Product> optionalProduct = productRepository.findById(productDto.getId());
+        Optional<Product> optionalProduct = productRepository.findById(productIdDto.getProductId());
         if (optionalProduct.isPresent()) {
             product = optionalProduct.get();
         } else { return; }
@@ -53,8 +55,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductDto> getAll() {
-        return ProductDto.from(productRepository.findAll());
+    public List<ProductRespDto> getAll() {
+        return ProductRespDto.from(productRepository.findAll());
     }
 
     @Override

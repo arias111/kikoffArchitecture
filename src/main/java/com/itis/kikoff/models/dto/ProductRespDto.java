@@ -14,17 +14,17 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductDto {
-//    private Long id;
+public class ProductRespDto {
+    private Long id;
     private Integer countOfProducts;
     private Integer priceOfOne;
     private String name;
     private Long categoryId;
-    public static List<ProductDto> from(List<Product> products) {
-        List<ProductDto> result = new ArrayList<>();
+    public static List<ProductRespDto> from(List<Product> products) {
+        List<ProductRespDto> result = new ArrayList<>();
         for (Product product : products) {
-            ProductDto productDto = ProductDto.builder()
-//                    .id(product.getId())
+            ProductRespDto productDto = ProductRespDto.builder()
+                    .id(product.getId())
                     .name(product.getName())
                     .countOfProducts(product.getCountOfProducts())
                     .priceOfOne(product.getPriceOfOne())
@@ -34,9 +34,9 @@ public class ProductDto {
         }
         return result;
     }
-    public static ProductDto fromOne(Product product) {
-        return ProductDto.builder()
-//                .id(product.getId())
+    public static ProductRespDto fromOne(Product product) {
+        return ProductRespDto.builder()
+                .id(product.getId())
                 .name(product.getName())
                 .countOfProducts(product.getCountOfProducts())
                 .priceOfOne(product.getPriceOfOne())
@@ -44,8 +44,9 @@ public class ProductDto {
                 .build();
     }
 
-    public static Product to(ProductDto productDto, Category category) {
+    public static Product to(ProductRespDto productDto, Category category) {
         return Product.builder()
+                .id(productDto.getId())
                 .countOfProducts(productDto.getCountOfProducts())
                 .priceOfOne(productDto.getPriceOfOne())
                 .name(productDto.getName())

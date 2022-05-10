@@ -1,9 +1,6 @@
 package com.itis.kikoff.controllers;
 
-import com.itis.kikoff.models.dto.BasketDto;
-import com.itis.kikoff.models.dto.BasketIdDto;
-import com.itis.kikoff.models.dto.ProductDto;
-import com.itis.kikoff.models.dto.ProductIdDto;
+import com.itis.kikoff.models.dto.*;
 import com.itis.kikoff.models.shop.Product;
 import com.itis.kikoff.services.BasketService;
 import com.itis.kikoff.services.ProductService;
@@ -12,10 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,26 +21,32 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/product/getAll")
-    @ApiOperation("get one basket")
-    public ResponseEntity<List<ProductDto>> getBasket() {
+    @ApiOperation("get all products")
+    public ResponseEntity<List<ProductRespDto>> getBasket(@RequestHeader("X-TOKEN") String token) {
         return ResponseEntity.ok(productService.getAll());
     }
 
     @PostMapping("/product/add")
-    public ResponseEntity<?> addProduct(@RequestBody ProductDto productDto) {
+    public ResponseEntity<?> addProduct(@RequestHeader("X-TOKEN") String token, @RequestBody ProductDto productDto) {
         productService.addProduct(productDto);
         return ResponseEntity.ok("");
     }
 
     @PostMapping("/product/delete")
-    public ResponseEntity<?> deleteProduct(@RequestBody ProductDto productDto) {
-        productService.deleteProduct(productDto);
+    public ResponseEntity<?> deleteProduct(@RequestHeader("X-TOKEN") String token, @RequestBody ProductIdDto productIdDto) {
+        productService.deleteProduct(productIdDto);
         return ResponseEntity.ok("");
     }
 
-    @PostMapping("/product/getProduct")
-    public ResponseEntity<ProductDto> getProduct(@RequestBody ProductIdDto productIdDto) {
-        return ResponseEntity.ok(productService.getProduct(productIdDto.getProductId()));
-    };
+//    @PostMapping("/product/getProduct")
+//    public ResponseEntity<ProductDto> getProduct(@RequestHeader("X-TOKEN") String token, @RequestBody ProductIdDto productIdDto) {
+//        return ResponseEntity.ok(productService.getProduct(productIdDto.getProductId()));
+//    }
+
+    @GetMapping("/product/getProducts/{product-id}")
+    public ResponseEntity<ProductDto> getProducts(@RequestHeader("X-TOKEN") String token, @PathVariable("product-id") Long productId) {
+        return ResponseEntity.ok(productService.getProduct(productId));
+    }
+
 
 }

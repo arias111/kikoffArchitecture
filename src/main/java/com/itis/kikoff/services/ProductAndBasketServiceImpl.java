@@ -57,8 +57,8 @@ public class ProductAndBasketServiceImpl implements ProductAndBasketService {
     }
 
     @Override
-    public List<ProductDto> getProductsFromBasket(BasketIdDto basketIdDto) {
-        List<BasketProduct> basketProductList = basketProductRepository.findAllByBasket_Id(basketIdDto.getBasketId());
+    public List<ProductDto> getProductsFromBasket(Long id) {
+        List<BasketProduct> basketProductList = basketProductRepository.findAllByBasket_Id(id);
         List<Product> productList = new ArrayList<>();
         for (BasketProduct basketProduct : basketProductList) {
             productList.add(basketProduct.getProduct());

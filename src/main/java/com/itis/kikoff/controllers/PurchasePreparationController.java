@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -21,12 +22,12 @@ public class PurchasePreparationController {
     private BillProductService billProductService;
 
     @PostMapping("/bill/create")
-    public ResponseEntity<BillIdDto> createBill(@RequestBody BillDto billDto) {
+    public ResponseEntity<BillIdDto> createBill(@RequestHeader("X-TOKEN") String token, @RequestBody BillDto billDto) {
         return ResponseEntity.ok(billService.createBill(billDto));
     }
 
     @PostMapping("/bill/fill")
-    public ResponseEntity<?> fillBill(@RequestBody BillProductDto billProductDto) {
+    public ResponseEntity<?> fillBill(@RequestHeader("X-TOKEN") String token, @RequestBody BillProductDto billProductDto) {
         billProductService.fill(billProductDto);
         return ResponseEntity.ok("");
     }

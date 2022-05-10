@@ -14,7 +14,6 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddressDto {
-    private Long id;
     private String street;
     private String houseNumber;
     private Integer flat;

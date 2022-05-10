@@ -35,8 +35,8 @@ public class BasketServiceImpl implements BasketService {
     private ProductRepository productRepository;
 
     @Override
-    public BasketDto getBasket(BasketIdDto basketIdDto) {
-        Long basketId = basketIdDto.getBasketId();
+    public BasketDto getBasket(Long id) {
+        Long basketId = id;
         Basket basket;
         User user;
         Optional<Basket> optionalBasket = basketRepository.findById(basketId);

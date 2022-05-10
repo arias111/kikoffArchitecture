@@ -31,7 +31,7 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private List<BillProduct> billProductList;
     @OneToMany(mappedBy = "product")
-    @ToString.Exclude
+    //@ToString.Exclude
     private List<BasketProduct> basketProducts;
 
     @Override
