@@ -1,20 +1,24 @@
 PODS:
+  - Kingfisher (7.2.2)
   - SnapKit (5.0.1)
   - SwiftLint (0.46.3)
 
 DEPENDENCIES:
+  - Kingfisher (~> 7.0)
   - SnapKit (~> 5.0.0)
   - SwiftLint (~> 0.46.2)
 
 SPEC REPOS:
   trunk:
+    - Kingfisher
     - SnapKit
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Kingfisher: 184d4d1a8c36666e663caf8e08abe87898595c53
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftLint: ae76d82f056734f853c8cd0371503252c606c482
 
-PODFILE CHECKSUM: 5f3db30a2e2b1dbee76f3cf02b757c9a734d5456
+PODFILE CHECKSUM: a5f92add1edd28155b418d3ddb8de9b51311ad08
 
 COCOAPODS: 1.11.3
