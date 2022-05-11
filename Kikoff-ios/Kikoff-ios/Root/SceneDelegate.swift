@@ -19,12 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
         window = UIWindow(windowScene: windowScene)
         
-		let viewController: UIViewController
-		if tokenProvider.token == nil {
-			viewController = AuthorizationViewController()
-		} else {
-			viewController = ProfileViewController()
-		}
+		let viewController: UIViewController = AuthorizationViewController()
+//		if tokenProvider.token == nil {
+//			viewController = AuthorizationViewController()
+//		} else {
+//			viewController = ProfileViewController()
+//		}
         
         window?.rootViewController = UINavigationController(
             navigationBar: NavigationBar.self,

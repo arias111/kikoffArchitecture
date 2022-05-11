@@ -8,15 +8,6 @@
 import Foundation
 import UIKit
 
-struct RegistrationForm: Encodable {
-    let username: String
-    let password: String
-    let firstName: String
-    let lastName: String
-    let patronymic: String
-    let birthDate: Date
-}
-
 final class PersonalInfoPassStepViewController: UIViewController, RootViewContainable {
     typealias RootView = ScrollableStackView
     
@@ -92,20 +83,21 @@ final class PersonalInfoPassStepViewController: UIViewController, RootViewContai
             let lastName = lastNameField.nonEmptyText,
             let patronymic = patronymicField.nonEmptyText
         else { return }
-        
-        let form = RegistrationForm(
-            username: previousStep.username,
-            password: previousStep.password,
-            firstName: firstName,
-            lastName: lastName,
-            patronymic: patronymic,
-            birthDate: datePicker.date
+		let dateFormatter = DateFormatter()
+
+        let form = RegistrationModel(
+			birthday: dateFormatter.string(from: datePicker.date),
+			creationDate: dateFormatter.string(from: Date()),
+			email: previousStep.username,
+			firstName: firstName,
+			lastName: lastName,
+			password: previousStep.password,
+			patronymic: patronymic
         )
         
-        service.send(form: form) { [weak self] in
-		
-            self?.navigationController?.setViewControllers([ProfileViewController()], animated: true)
-        }
+		service.send(form: form) { [weak self] in
+			self?.navigationController?.setViewControllers([AuthorizationViewController()], animated: true)
+		}
     }
 }
 

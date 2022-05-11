@@ -52,8 +52,24 @@ final class AuthorizationViewController: UIViewController, RootViewContainable, 
     }
     
     private func auth(model: AuthFormModel) {
-        service.auth(form: model) { [weak self] in
-            self?.showProfile()
+		service.auth(form: model) { [weak self] result in
+			switch result {
+			case .success:
+				DispatchQueue.main.async {
+					self?.showProfile()
+				}
+			case .failure:
+				DispatchQueue.main.async {
+					let alert = UIAlertController(
+						title: "Something went wrong",
+						message: nil,
+						preferredStyle: .alert
+					)
+					let action = UIAlertAction(title: "Try again", style: .default, handler: nil)
+					alert.addAction(action)
+					self?.navigationController?.present(alert, animated: true, completion: nil)
+				}
+			}
         }
     }
     
