@@ -1,9 +1,6 @@
-package com.itis.kikoff;
+package com.itis.kikoff.reports;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 public class Data {
 
