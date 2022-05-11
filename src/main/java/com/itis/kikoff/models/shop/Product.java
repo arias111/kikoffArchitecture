@@ -25,6 +25,8 @@ public class Product {
     @NotNull
     private String name;
     @NotNull
+    private String url;
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category categories;

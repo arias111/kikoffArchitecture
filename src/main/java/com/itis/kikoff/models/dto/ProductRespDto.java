@@ -19,6 +19,7 @@ public class ProductRespDto {
     private Integer countOfProducts;
     private Integer priceOfOne;
     private String name;
+    private String url;
     private Long categoryId;
     public static List<ProductRespDto> from(List<Product> products) {
         List<ProductRespDto> result = new ArrayList<>();

@@ -128,7 +128,7 @@ class KikoffApplicationTests {
 
     @Test
     public void productControllerAddTest() {
-        given().headers(headers).with().body(new ProductDto(10, 350, "Сыр", 1L))
+        given().headers(headers).with().body(new ProductDto(10, 350, "Сыр", "https://www.pngkit.com/png/full/424-4248991_cheese-png-.png", 1L))
                 .when()
                 .request("POST", "/product/add")
                 .then()
