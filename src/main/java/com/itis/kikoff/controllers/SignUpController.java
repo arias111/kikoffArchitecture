@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Api("signUpController")
 public class SignUpController {
+
     @Autowired
     private SignUpService signUpService;
 

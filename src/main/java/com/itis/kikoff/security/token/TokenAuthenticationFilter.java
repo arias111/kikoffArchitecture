@@ -1,5 +1,6 @@
 package com.itis.kikoff.security.token;
 
+import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.itis.kikoff.repositories.TokenRepository;
 import com.itis.kikoff.repositories.UserRepository;
 import com.itis.kikoff.services.TokenService;
@@ -34,8 +35,9 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
                 TokenAuthentication tokenAuthentication = new TokenAuthentication(token);
                 SecurityContextHolder.getContext().setAuthentication(tokenAuthentication);
                 filterChain.doFilter(request, response);
+                return;
             } else {
-                throw new IllegalStateException();
+                throw new JWTVerificationException("Wrong token");
             }
         }
         filterChain.doFilter(request, response);

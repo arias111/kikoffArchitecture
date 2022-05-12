@@ -26,7 +26,8 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<ProductRespDto> getProducts(Long id) {
         List<Product> products = productRepository.findAllByCategories_Id(id);
-        return ProductRespDto.from(products);
+        List<ProductRespDto> result = ProductRespDto.from(products);
+        return result;
     }
 
     @Override
