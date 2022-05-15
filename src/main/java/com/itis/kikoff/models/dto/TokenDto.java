@@ -1,12 +1,16 @@
-package com.itis.kikoff.dto;
+package com.itis.kikoff.models.dto;
+
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Getter
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
+@Builder
 public class TokenDto {
     private String token;
 }

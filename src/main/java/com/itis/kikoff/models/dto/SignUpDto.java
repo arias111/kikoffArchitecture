@@ -1,4 +1,4 @@
-package com.itis.kikoff.dto;
+package com.itis.kikoff.models.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,19 +9,15 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Data
 @Builder
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class SignUpDto {
     private String email;
+    private String password;
     private String firstName;
     private String lastName;
     private String patronymic;
-    private String password;
-
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate birthday;
-
-    private LocalDateTime creationDate;
+    private LocalDateTime birthday;
 }

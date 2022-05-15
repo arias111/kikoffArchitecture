@@ -1,4 +1,4 @@
-package com.itis.kikoff.dto;
+package com.itis.kikoff.models.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SignInDto {
-    private String email;
+public class ProfileUpdateDto {
+    private String username;
     private String password;
 }
