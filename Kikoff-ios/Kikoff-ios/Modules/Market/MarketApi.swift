@@ -11,17 +11,21 @@ import Combine
 final class MarketApi {
     private let session = URLSession.shared
     private let responseQueue = DispatchQueue.main
-    private let decoder = JSONDecoder()
+	
+	private let decoder: JSONDecoder = {
+		let decoder = JSONDecoder()
+		return decoder
+	}()
+	
     private let tokenProvider = TokenProvider()
 
-    func loadAllCategories() -> AnyPublisher<[MarketCategory], Error> {
-        allCategoriesStub()
-//        load(request: buildRequest(path: .allCategories()))
-    }
+	func loadAllCategories() -> AnyPublisher<[MarketCategory], Error> {
+		load(request: buildRequest(path: .allCategories(), useToken: false))
+	}
 
     func loadProducts(withCategoryId id: Int) -> AnyPublisher<[MarketProduct], Error> {
-        productsStub()
-//        load(request: buildRequest(path: .products(forCategory: id)))
+       // productsStub()
+		load(request: buildRequest(path: .products(forCategory: id), useToken: true))
     }
 
     private func load<T: Decodable>(request: URLRequest) -> AnyPublisher<T, Error> {
@@ -32,9 +36,16 @@ final class MarketApi {
             .receive(on: responseQueue)
             .eraseToAnyPublisher()
     }
-
-    private func buildRequest(path: String) -> URLRequest {
+	
+	private func buildRequest(path: String, useToken: Bool) -> URLRequest {
         var request = URLRequest(url: .base.appendingPathComponent(path))
+		request.httpMethod = "GET"
+		if useToken {
+			// swiftlint:disable:next line_length
+			request.setValue("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwicm9sZSI6IlVTRVIiLCJleHAiOjE2NTI5NDcyNzIsImVtYWlsIjoibmFpbEBnbWFpbC5jb20ifQ.NjkUjzQNPhd9hHyHXQ7c21GbDA-4Ljl-dDaevtc_Flc", forHTTPHeaderField: "X-TOKEN")
+		}
+
+		request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         return request
     }
 }
@@ -78,9 +89,10 @@ private extension URL {
         URL(string: "http://localhost:8080")!
     }
 
-    static var imageStub: URL {
+    static var imageStub: URL? {
         // swiftlint:disable:next force_unwrapping
-        URL(string: "https://russianbeauty.ru/wp-content/uploads/2018/03/botox-dlya-grudi.jpg")!
+		return nil
+//        URL(string: "https://russianbeauty.ru/wp-content/uploads/2018/03/botox-dlya-grufdi.jpg")!
     }
 }
 

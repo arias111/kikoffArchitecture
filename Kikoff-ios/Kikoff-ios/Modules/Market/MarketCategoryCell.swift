@@ -24,6 +24,7 @@ final class MarketCategoryCell: UICollectionViewCell, Configurable {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14, weight: .regular)
+		label.textAlignment = .center
         return label
     }()
 
@@ -42,7 +43,7 @@ final class MarketCategoryCell: UICollectionViewCell, Configurable {
 
     func configure(with item: MarketCategory) -> Self {
         titleLabel.text = item.name
-        imageView.kf.setImage(with: item.imageUrl)
+        imageView.kf.setImage(with: item.imageUrl, placeholder: UIImage(named: "profile"))
         return self
     }
 

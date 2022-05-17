@@ -87,7 +87,6 @@ final class PersonalInfoPassStepViewController: UIViewController, RootViewContai
 
         let form = RegistrationModel(
 			birthday: dateFormatter.string(from: datePicker.date),
-			creationDate: dateFormatter.string(from: Date()),
 			email: previousStep.username,
 			firstName: firstName,
 			lastName: lastName,
@@ -96,7 +95,9 @@ final class PersonalInfoPassStepViewController: UIViewController, RootViewContai
         )
         
 		service.send(form: form) { [weak self] in
-			self?.navigationController?.setViewControllers([AuthorizationViewController()], animated: true)
+			DispatchQueue.main.async {
+				self?.navigationController?.setViewControllers([MainTabBarController()], animated: true)
+			}
 		}
     }
 }

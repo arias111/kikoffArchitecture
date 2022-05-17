@@ -49,7 +49,7 @@ final class MarketProductCell: UICollectionViewCell, Configurable {
     func configure(with item: MarketProduct) -> Self {
         titleLabel.text = item.name
         priceLabel.text = "₽ \(item.priceOfOne)"
-        imageView.kf.setImage(with: item.imageUrl)
+        imageView.kf.setImage(with: item.imageUrl, placeholder: UIImage(named: "profile"))
         return self
     }
 

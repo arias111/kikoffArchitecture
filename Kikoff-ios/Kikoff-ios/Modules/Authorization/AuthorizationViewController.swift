@@ -56,7 +56,7 @@ final class AuthorizationViewController: UIViewController, RootViewContainable, 
 			switch result {
 			case .success:
 				DispatchQueue.main.async {
-					self?.showProfile()
+					self?.showMainFlow()
 				}
 			case .failure:
 				DispatchQueue.main.async {
@@ -78,8 +78,8 @@ final class AuthorizationViewController: UIViewController, RootViewContainable, 
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    private func showProfile() {
-		let profileVc = ProfileViewController()
-		navigationController?.pushViewController(profileVc, animated: true)
+    private func showMainFlow() {
+		let tabBar = MainTabBarController()
+		navigationController?.setViewControllers([tabBar], animated: true)
 	}
 }

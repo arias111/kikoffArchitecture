@@ -9,7 +9,6 @@ import Foundation
 
 struct RegistrationModel: Encodable {
 	let birthday: String
-	let creationDate: String
 	let email: String
 	let firstName: String
 	let lastName: String

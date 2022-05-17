@@ -18,7 +18,7 @@ final class AuthService {
 	let tokenProvider = TokenProvider()
 	
 	func auth(form: AuthFormModel, completion: @escaping (Result<Void, CustomError>) -> Void) {
-		let url = String(format: "http://localhost:8081/sign-in")
+		let url = String(format: "http://localhost:8080/signIn")
 		guard let serviceUrl = URL(string: url) else { return }
 		
 		let encodableModel = try? JSONEncoder().encode(form)
@@ -47,7 +47,7 @@ final class AuthService {
 	}
     
     func send(form: RegistrationModel, completion: @escaping () -> Void) {
-		let url = String(format: "http://localhost:8081/sign-up")
+		let url = String(format: "http://localhost:8080/signUp")
 		guard let serviceUrl = URL(string: url) else { return }
 		
 		let encodableModel = try? JSONEncoder().encode(form)
@@ -62,13 +62,17 @@ final class AuthService {
 			if let data = data {
 				do {
 					let json = try JSONSerialization.jsonObject(with: data, options: [])
-					print(json)
+					let token = (json as? [String: String])?["token"]
+					self.tokenProvider.token = token
+					let userData = ["email": form.email, "name": form.firstName, "lastName": form.lastName]
+					UserDefaults.standard.set(userData, forKey: "model")
+					print(self.tokenProvider.token)
 				} catch {
 					print(error)
 				}
 			}
+			completion()
 		}
 		.resume()
-        completion()
     }
 }

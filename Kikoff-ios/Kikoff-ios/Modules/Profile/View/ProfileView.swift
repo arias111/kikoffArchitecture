@@ -141,6 +141,7 @@ final class ProfileView: UIView {
 	private func configure() {
 		backgroundColor = .white
 		avatarImage.layer.cornerRadius = appearance.imageSize / 2
+		updateUserData()
 	}
 	
 	private func saveImage(image: UIImage) {
@@ -156,6 +157,10 @@ final class ProfileView: UIView {
 			let image = UIImage(data: decoded)
 			avatarImage.image = image
 		}
+	}
+	
+	func updateUserData() {
+		let data = UserDefaults.standard.data(forKey: "model")
 	}
 	
 	func updateImage(with image: UIImage) {
