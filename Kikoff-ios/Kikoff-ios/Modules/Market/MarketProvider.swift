@@ -19,7 +19,7 @@ struct MarketCategory: Hashable, Decodable {
     let imageUrl: URL?
 }
 
-struct MarketProduct: Hashable, Decodable {
+struct MarketProduct: Hashable, Codable {
     let id: Int
     let name: String
     let categoryId: Int
