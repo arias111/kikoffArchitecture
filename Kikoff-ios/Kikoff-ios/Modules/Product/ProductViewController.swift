@@ -35,6 +35,8 @@ final class ProductViewController: UIViewController, RootViewContainable {
     private func configureView() {
         title = product.name
 
+        rootView.backgroundColor = .white
+        
         let imageView = UIImageView()
         imageView.kf.setImage(with: product.imageUrl)
         imageView.snp.makeConstraints { make in
@@ -45,16 +47,23 @@ final class ProductViewController: UIViewController, RootViewContainable {
 
         let nameLabel = UILabel()
         nameLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+        nameLabel.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         rootView.set(nameLabel)
 
         let priceLabel = UILabel()
-        priceLabel.font = .systemFont(ofSize: 12, weight: .regular)
+        priceLabel.font = .systemFont(ofSize: 24, weight: .regular)
         priceLabel.text = "Price: ₽ \(product.priceOfOne)"
         rootView.set(priceLabel)
 
         let button = StylingButton(style: .primary(title: "Buy"))
+        button.enableTapping { [unowned self] in
+            showBasket()
+        }
+        
         rootView.addSubview(button) {
             $0.leading.trailing.bottom.equalToSuperview().inset(40)
         }
     }
+    
+    private func showBasket() {}
 }
