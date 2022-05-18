@@ -9,7 +9,23 @@ import Foundation
 import UIKit
 import SnapKit
 
+protocol BasketDelegate: AnyObject {
+	func checkOut(address: Address)
+}
+
 final class BasketView: UIView {
+	private let stackTextView: UIStackView = {
+		let stack = UIStackView()
+		stack.axis = .vertical
+		stack.spacing = 5
+		stack.distribution = .fillEqually
+		return stack
+	}()
+	
+	private lazy var flatField = UITextField()
+	private lazy var houseField = UITextField()
+	private lazy var streetField = UITextField()
+	
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.text = "Total"
@@ -20,7 +36,6 @@ final class BasketView: UIView {
 	
 	private lazy var descriptionLabel: UILabel = {
 		let label = UILabel()
-		label.text = "500"
 		label.textAlignment = .center
 		return label
 	}()
@@ -63,11 +78,23 @@ final class BasketView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	func reloadData() {
+		collectionView.reloadData()
+		let total = BasketService.shared.products.reduce(0) { partialResult, prod in
+			partialResult + prod.priceOfOne
+		}
+		descriptionLabel.text = "\(total)"
+	}
+	
 	// MARK: - Private Methods
 	
 	private func addSubviews() {
 		addSubview(view)
 		addSubview(collectionView)
+		addSubview(stackTextView)
+		stackTextView.addArrangedSubview(flatField)
+		stackTextView.addArrangedSubview(houseField)
+		stackTextView.addArrangedSubview(streetField)
 		view.addSubview(completeButton)
 		view.addSubview(stackView)
 		stackView.addArrangedSubview(titleLabel)
@@ -75,9 +102,16 @@ final class BasketView: UIView {
 	}
 	
 	private func setupConstraints() {
+		stackTextView.snp.makeConstraints { make in
+			make.left.right.equalToSuperview().inset(10)
+			make.height.equalTo(115)
+			make.top.equalTo(safeAreaLayoutGuide).offset(10)
+		}
+		
 		collectionView.snp.makeConstraints { make in
-			make.left.right.top.equalToSuperview()
+			make.left.right.equalToSuperview()
 			make.bottom.equalTo(view.snp.top)
+			make.top.equalTo(stackTextView.snp.bottom)
 		}
 		
 		view.snp.makeConstraints { make in
@@ -103,9 +137,23 @@ final class BasketView: UIView {
 		backgroundColor = .white
 		view.layer.cornerRadius = 30
 		view.backgroundColor = #colorLiteral(red: 0.9644201306, green: 0.9644201306, blue: 0.9644201306, alpha: 1)
+		flatField.placeholder = "Enter your flat"
+		streetField.placeholder = "Enter your street"
+		houseField.placeholder = "Enter your house number"
 	}
 	
+	weak var delegate: BasketDelegate?
+	
 	@objc private func completePressed() {
+		guard
+			let flat = flatField.nonEmptyText.flatMap(Int.init),
+			let street = streetField.nonEmptyText,
+			let house = houseField.nonEmptyText
+		else {
+			return
+		}
+		let address = Address(flat: flat, houseNumber: street, street: house)
+		delegate?.checkOut(address: address)
 	}
 }
 
@@ -113,7 +161,7 @@ final class BasketView: UIView {
 
 private extension BasketView {
 	func makeCompositionalLayout() -> UICollectionViewCompositionalLayout {
-		UICollectionViewCompositionalLayout { [unowned self] sectionIndex, _ in
+		UICollectionViewCompositionalLayout { [unowned self] _, _ in
 			return makeProductsSection()
 		}
 	}

@@ -16,9 +16,8 @@ struct Address: Encodable {
 final class BasketService {
     static let shared = BasketService()
     private let session = URLSession.shared
-    private var products: [MarketProduct] = []
+	private(set) var products: [MarketProduct] = []
     private let decoder = JSONDecoder()
-    private var basketId: Int?
     private let tokenProvider = TokenProvider()
 
     private init() {}
@@ -53,12 +52,13 @@ final class BasketService {
         let profile = try decoder.decode(Profile.self, from: profileData)
         // создаем корзину
         let (baskedData, _) = try await session.data(for: .createBasket(products: products, userId: profile.id))
+		print(String(data: baskedData, encoding: .utf8))
         let basket = try decoder.decode(BasketResponse.self, from: baskedData)
         // сохраняем адрес доставки
-        let (deliveryData, _) = try await session.data(for: .createDelivery(address: address))
-        let addressId = try decoder.decode(Delivery.self, from: deliveryData).addressId
+//        let (deliveryData, _) = try await session.data(for: .createDelivery(address: address))
+//        let addressId = try decoder.decode(Delivery.self, from: deliveryData).addressId
         // создаем чек
-        let (billCreateData, _) = try await session.data(for: .billCreate(addressId: addressId, personalAccountId: profile.personalAccountId))
+        let (billCreateData, _) = try await session.data(for: .billCreate(addressId: 2, personalAccountId: profile.personalAccountId))
         let billId = try decoder.decode(BillCreateResponse.self, from: billCreateData).id
         // заполняем чек продуктами
         _ = try await session.data(for: .billFill(billId: billId, productList: products))
@@ -66,7 +66,6 @@ final class BasketService {
         _ = try await session.data(for: .billSuccess(billId: billId))
         // удаляем корзину
         _ = try await session.data(for: .deleteBasket(basketId: basket.basketId))
-        
         // очищаем кеш
         self.products.removeAll()
     }
@@ -79,6 +78,7 @@ private extension URLRequest {
         let url = URL(string: "http://localhost:8080/bill/create")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+		request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         request.setValue(TokenProvider().token, forHTTPHeaderField: "X-TOKEN")
         let json = ["addressId": addressId, "personalAccountId": personalAccountId]
         request.httpBody = try? JSONSerialization.data(withJSONObject: json)
@@ -89,6 +89,7 @@ private extension URLRequest {
         let url = URL(string: "http://localhost:8080/bill/fill")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+		request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         request.setValue(TokenProvider().token, forHTTPHeaderField: "X-TOKEN")
         request.httpBody = try? JSONEncoder().encode(BillFillRequest(billId: billId, productList: productList))
         return request
@@ -98,6 +99,7 @@ private extension URLRequest {
         let url = URL(string: "http://localhost:8080/bill/fill")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+		request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         request.setValue(TokenProvider().token, forHTTPHeaderField: "X-TOKEN")
         let json = ["id": billId]
         request.httpBody = try? JSONSerialization.data(withJSONObject: json)
@@ -110,6 +112,7 @@ private extension URLRequest {
         let url = URL(string: "http://localhost:8080/delivery")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+		request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         request.setValue(TokenProvider().token, forHTTPHeaderField: "X-TOKEN")
         request.httpBody = try? JSONEncoder().encode(address)
         return request
@@ -132,7 +135,13 @@ private extension URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue(TokenProvider().token, forHTTPHeaderField: "X-TOKEN")
-        request.httpBody = try? JSONEncoder().encode(CreateBasketRequest(productList: products, userId: userId))
+		let dict: [String: Any] = [
+			"productList": products,
+			"userId": userId
+		]
+        request.httpBody = try! JSONEncoder().encode(CreateBasketRequest(productList: products, userId: userId))
+		request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+		print(request.httpBody)
         return request
     }
     
@@ -140,6 +149,7 @@ private extension URLRequest {
         let url = URL(string: "http://localhost:8080/basket/deleteBasket")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+		request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         request.setValue(TokenProvider().token, forHTTPHeaderField: "X-TOKEN")
         let json = ["basketId": basketId]
         

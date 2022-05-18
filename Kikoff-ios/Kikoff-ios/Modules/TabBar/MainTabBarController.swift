@@ -18,7 +18,9 @@ final class MainTabBarController: UITabBarController {
 		let market = MarketViewController()
 		let basket = BasketViewController()
 		
-		viewControllers = [market, basket, profile]
+		viewControllers = [market, basket, profile].map {
+			UINavigationController(navigationBar: NavigationBar.self, rootViewController: $0)
+		}
 		tabBarItem.image = UIImage(named: "profile")
 		selectedIndex = 1
 	}

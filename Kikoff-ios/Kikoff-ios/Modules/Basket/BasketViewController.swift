@@ -19,18 +19,16 @@ class BasketViewController: UIViewController, UICollectionViewDelegate, UICollec
 		title = "Your Cart"
 		customView.collectionView.delegate = self
 		customView.collectionView.dataSource = self
-//		basketService.getCart { result in
-//			switch result {
-//			case .success(let basket):
-//				print(basket)
-//			case .failure(let error):
-//				print(error)
-//			}
-//		}
+		customView.delegate = self
     }
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		customView.reloadData()
+	}
+	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 10
+		return basketService.products.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -39,18 +37,17 @@ class BasketViewController: UIViewController, UICollectionViewDelegate, UICollec
 			for: indexPath
 		) as? MarketProductCell
 		else { return UICollectionViewCell() }
-		let stub = (0...20).map {
-			MarketProduct(
-				id: $0,
-				name: "Product \($0)",
-				categoryId: 1,
-				countOfProducts: 20,
-				priceOfOne: 4343,
-				imageUrl: URL(string: "")
-			)
-		}
-		let cells = stub[indexPath.row]
+		let cells = basketService.products[indexPath.row]
 		cell.configure(with: cells)
 		return cell
+	}
+}
+
+extension BasketViewController: BasketDelegate {
+	func checkOut(address: Address) {
+		basketService.buy(address: address) { result in
+			self.customView.reloadData()
+			self.navigationController?.popToRootViewController(animated: true)
+		}
 	}
 }

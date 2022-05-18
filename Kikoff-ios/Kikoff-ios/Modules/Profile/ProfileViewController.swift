@@ -26,7 +26,6 @@ class ProfileViewController: UIViewController {
 			}
 		}
 		title = "Nail Galiev"
-		navigationController?.navigationBar.removeFromSuperview()
 	}
 	
 	override func loadView() {

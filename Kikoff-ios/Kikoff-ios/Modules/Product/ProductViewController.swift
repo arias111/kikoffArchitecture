@@ -55,7 +55,7 @@ final class ProductViewController: UIViewController, RootViewContainable {
         priceLabel.text = "Price: ₽ \(product.priceOfOne)"
         rootView.set(priceLabel)
 
-        let button = StylingButton(style: .primary(title: "Buy"))
+        let button = StylingButton(style: .primary(title: "Add to Cart"))
         button.enableTapping { [unowned self] in
             showBasket()
         }
@@ -65,5 +65,8 @@ final class ProductViewController: UIViewController, RootViewContainable {
         }
     }
     
-    private func showBasket() {}
+    private func showBasket() {
+		BasketService.shared.addToCard(product: product)
+		navigationController?.pushViewController(BasketViewController(), animated: true)
+	}
 }

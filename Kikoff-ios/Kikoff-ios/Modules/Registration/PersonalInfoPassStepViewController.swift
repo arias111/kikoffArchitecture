@@ -94,7 +94,8 @@ final class PersonalInfoPassStepViewController: UIViewController, RootViewContai
 			patronymic: patronymic
         )
         
-		service.send(form: form) { [weak self] in
+		service.send(form: form) { [weak self] bool in
+			guard bool else { return print("Хуйня") }
 			DispatchQueue.main.async {
 				self?.navigationController?.setViewControllers([MainTabBarController()], animated: true)
 			}

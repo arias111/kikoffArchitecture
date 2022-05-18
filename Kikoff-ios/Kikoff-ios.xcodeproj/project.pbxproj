@@ -20,10 +20,10 @@
 		CE2246B928343F0F00D2F7EB /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2246B828343F0F00D2F7EB /* BasketView.swift */; };
 		CE2246BB283440CA00D2F7EB /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2246BA283440CA00D2F7EB /* BasketViewController.swift */; };
 		CE2246BD2835602300D2F7EB /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2246BC2835602300D2F7EB /* ProfileService.swift */; };
-		CE2246C02835766D00D2F7EB /* BasketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2246BF2835766D00D2F7EB /* BasketService.swift */; };
 		CE3C9E0F28109E060089D224 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C9E0E28109E060089D224 /* ProfileView.swift */; };
 		CE3C9E112810A04B0089D224 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C9E102810A04B0089D224 /* ProfileViewController.swift */; };
 		CE6DF9BB282CED4500C6ABDE /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DF9BA282CED4500C6ABDE /* MainTabBarController.swift */; };
+		CE92FFF4283598A200E10534 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576102D42835731200FD25DA /* ProductViewController.swift */; };
 		CE9BB7F82819CBBA004A2BFC /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BB7F72819CBBA004A2BFC /* RegistrationModel.swift */; };
 		DE785CF7280DDEC300082E95 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785CF6280DDEC300082E95 /* AuthorizationViewController.swift */; };
 		DE785D04280DEB3C00082E95 /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D03280DEB3C00082E95 /* ScrollableStackView.swift */; };
@@ -67,7 +67,6 @@
 		CE2246B828343F0F00D2F7EB /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
 		CE2246BA283440CA00D2F7EB /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		CE2246BC2835602300D2F7EB /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
-		CE2246BF2835766D00D2F7EB /* BasketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketService.swift; sourceTree = "<group>"; };
 		CE3C9E0E28109E060089D224 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CE3C9E102810A04B0089D224 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CE6DF9BA282CED4500C6ABDE /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -172,7 +171,6 @@
 		CE2246BE2835764000D2F7EB /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				CE2246BF2835766D00D2F7EB /* BasketService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -499,11 +497,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE92FFF4283598A200E10534 /* ProductViewController.swift in Sources */,
 				576019AA282AAA1B00C25B91 /* MarketApi.swift in Sources */,
-				CE2246C02835766D00D2F7EB /* BasketService.swift in Sources */,
 				DE785D08280DF01F00082E95 /* RootViewContainable.swift in Sources */,
 				576019A4282A9FC800C25B91 /* MarketCategoryCell.swift in Sources */,
-				576102D52835731200FD25DA /* ProductViewController.swift in Sources */,
 				5760199E282A7CE300C25B91 /* UICollectionView+Utils.swift in Sources */,
 				DE785D0F280DF6C400082E95 /* Colors.swift in Sources */,
 				CE2246B928343F0F00D2F7EB /* BasketView.swift in Sources */,

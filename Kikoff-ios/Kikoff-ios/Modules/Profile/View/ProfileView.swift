@@ -31,7 +31,7 @@ extension ProfileView {
 		let imageTitle: String = "profile"
 		let titleLabel: String = "Your Balance"
 		let descriptionLabel: String = "0 $"
-		let saveButtonTitle: String = "Save"
+		let saveButtonTitle: String = "Pay"
 		let editButtonTitle: String = "Edit"
 	}
 }
@@ -125,7 +125,7 @@ final class ProfileView: UIView {
 		avatarImage.snp.makeConstraints { make in
 			make.height.width.equalTo(appearance.imageSize)
 			make.centerX.equalToSuperview()
-			make.top.equalToSuperview().inset(70)
+			make.top.equalTo(safeAreaLayoutGuide).inset(70)
 		}
 		
 		titleLabel.snp.makeConstraints { make in
