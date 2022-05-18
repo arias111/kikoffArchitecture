@@ -16,10 +16,22 @@ final class TokenProvider {
         }
         set {
             defaults.set(newValue, forKey: .key)
+			print(newValue)
         }
     }
+	
+	var basketId: String? {
+		get {
+			defaults.string(forKey: .basketKey)
+		}
+		set {
+			defaults.set(newValue, forKey: .basketKey)
+			print(newValue)
+		}
+	}
 }
 
 private extension String {
     static let key = "AuthTokenKey"
+	static let basketKey = "BasketId"
 }

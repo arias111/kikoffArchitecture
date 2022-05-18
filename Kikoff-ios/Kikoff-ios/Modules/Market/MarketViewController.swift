@@ -49,7 +49,6 @@ final class MarketViewController: UIViewController, RootViewContainable {
         navigationItem.largeTitleDisplayMode = .always
         rootView.observeProductsTapping { [unowned self] in show(product: $0) }
         rootView.observeCategoriesTapping { [unowned self] in provider.didTap(category: $0) }
-        
         provider.loadingPublisher
             .sink { [rootView] in $0 ? rootView.showLoader() : rootView.hideLoader() }
             .store(in: &disposeBag)

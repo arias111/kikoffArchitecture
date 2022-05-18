@@ -12,7 +12,7 @@ import SnapKit
 extension ProfileView {
 	private struct Appearance {
 		let titleFont = UIFont.systemFont(ofSize: 24, weight: .bold)
-		let descriptionFont = UIFont.systemFont(ofSize: 16)
+		let descriptionFont = UIFont.systemFont(ofSize: 20)
 		let imageSize: CGFloat = UIScreen.main.bounds.width > 375 ? 240 : 200
 		let topImageOffset: CGFloat = 7
 		let buttonSize: CGFloat = 40
@@ -29,15 +29,16 @@ extension ProfileView {
 		let numberOfLines: Int = 0
 		
 		let imageTitle: String = "profile"
-		let titleLabel: String = "Marina Dudarenko"
-		let descriptionLabel: String = "UX/UI designer, web-designer\nMoscow, Russia"
-		let saveButtonTitle: String = "Save"
+		let titleLabel: String = "Your Balance"
+		let descriptionLabel: String = "0 $"
+		let saveButtonTitle: String = "Pay"
 		let editButtonTitle: String = "Edit"
 	}
 }
 
 protocol ProfileViewDelegate: AnyObject {
 	func editProfile()
+	func logout()
 }
 
 final class ProfileView: UIView {
@@ -64,11 +65,12 @@ final class ProfileView: UIView {
 		label.font = appearance.descriptionFont
 		label.text = appearance.descriptionLabel
 		label.numberOfLines = appearance.numberOfLines
+		label.textAlignment = .center
 		return label
 	}()
 	
 	private lazy var saveButton: UIButton = {
-		let button = UIButton()
+		let button = UIButton(type: .system)
 		button.setTitle(appearance.saveButtonTitle, for: .normal)
 		button.setTitleColor(.systemBlue, for: .normal)
 		button.layer.cornerRadius = appearance.cornerRadius
@@ -77,10 +79,20 @@ final class ProfileView: UIView {
 	}()
 	
 	private lazy var editButton: UIButton = {
-		let button = UIButton()
+		let button = UIButton(type: .system)
 		button.setTitle(appearance.editButtonTitle, for: .normal)
 		button.setTitleColor(.systemBlue, for: .normal)
 		button.addTarget(self, action: #selector(editPressed), for: .touchUpInside)
+		return button
+	}()
+	
+	private lazy var logoutButton: UIButton = {
+		let button = UIButton(type: .system)
+		button.setTitle("Logout", for: .normal)
+		button.setTitleColor(.systemBlue, for: .normal)
+		button.layer.cornerRadius = appearance.cornerRadius
+		button.backgroundColor = appearance.buttonColor
+		button.addTarget(self, action: #selector(logout), for: .touchUpInside)
 		return button
 	}()
 	
@@ -106,13 +118,14 @@ final class ProfileView: UIView {
 		addSubview(avatarImage)
 		addSubview(saveButton)
 		addSubview(editButton)
+		addSubview(logoutButton)
 	}
 	
 	private func setupConstraints() {
 		avatarImage.snp.makeConstraints { make in
 			make.height.width.equalTo(appearance.imageSize)
 			make.centerX.equalToSuperview()
-			make.top.equalTo(safeAreaLayoutGuide.snp.top).inset(appearance.topImageOffset)
+			make.top.equalTo(safeAreaLayoutGuide).inset(70)
 		}
 		
 		titleLabel.snp.makeConstraints { make in
@@ -128,7 +141,7 @@ final class ProfileView: UIView {
 		saveButton.snp.makeConstraints { make in
 			make.left.right.equalToSuperview().inset(appearance.saveButtonLeftOffset)
 			make.height.equalTo(appearance.saveButtonHeight)
-			make.bottom.equalToSuperview().offset(appearance.saveButtonBottomOffset)
+			make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(appearance.saveButtonBottomOffset)
 		}
 		
 		editButton.snp.makeConstraints { make in
@@ -136,12 +149,18 @@ final class ProfileView: UIView {
 			make.top.equalTo(avatarImage.snp.bottom).offset(appearance.editButtonTop)
 			make.right.equalTo(avatarImage.snp.right).offset(appearance.editButtonRight)
 		}
+		
+		logoutButton.snp.makeConstraints { make in
+			make.right.equalToSuperview().offset(-30)
+			make.top.equalToSuperview().offset(30)
+			make.height.equalTo(appearance.saveButtonHeight)
+			make.width.equalTo(appearance.saveButtonHeight * 2)
+		}
 	}
 	
 	private func configure() {
 		backgroundColor = .white
 		avatarImage.layer.cornerRadius = appearance.imageSize / 2
-		updateUserData()
 	}
 	
 	private func saveImage(image: UIImage) {
@@ -159,8 +178,10 @@ final class ProfileView: UIView {
 		}
 	}
 	
-	func updateUserData() {
-		let data = UserDefaults.standard.data(forKey: "model")
+	func updateUserData(model: String) {
+		DispatchQueue.main.async {
+			self.descriptionLabel.text = "₽ \(model)"
+		}
 	}
 	
 	func updateImage(with image: UIImage) {
@@ -170,5 +191,9 @@ final class ProfileView: UIView {
 		
 	@objc private func editPressed() {
 		delegate?.editProfile()
+	}
+	
+	@objc private func logout() {
+		delegate?.logout()
 	}
 }

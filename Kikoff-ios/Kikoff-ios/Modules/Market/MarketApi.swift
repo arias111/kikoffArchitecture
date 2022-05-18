@@ -20,11 +20,12 @@ final class MarketApi {
     private let tokenProvider = TokenProvider()
 
 	func loadAllCategories() -> AnyPublisher<[MarketCategory], Error> {
+//		allCategoriesStub()
 		load(request: buildRequest(path: .allCategories(), useToken: false))
 	}
 
     func loadProducts(withCategoryId id: Int) -> AnyPublisher<[MarketProduct], Error> {
-       // productsStub()
+//        productsStub()
 		load(request: buildRequest(path: .products(forCategory: id), useToken: true))
     }
 
@@ -41,8 +42,7 @@ final class MarketApi {
         var request = URLRequest(url: .base.appendingPathComponent(path))
 		request.httpMethod = "GET"
 		if useToken {
-			// swiftlint:disable:next line_length
-			request.setValue("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwicm9sZSI6IlVTRVIiLCJleHAiOjE2NTI5NDcyNzIsImVtYWlsIjoibmFpbEBnbWFpbC5jb20ifQ.NjkUjzQNPhd9hHyHXQ7c21GbDA-4Ljl-dDaevtc_Flc", forHTTPHeaderField: "X-TOKEN")
+			request.setValue(tokenProvider.token, forHTTPHeaderField: "X-TOKEN")
 		}
 
 		request.setValue("Application/json", forHTTPHeaderField: "Content-Type")

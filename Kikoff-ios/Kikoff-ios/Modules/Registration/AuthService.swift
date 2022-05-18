@@ -36,8 +36,12 @@ final class AuthService {
 			if let data = data {
 				do {
 					let json = try JSONSerialization.jsonObject(with: data, options: [])
-					print(json)
-					completion(.success(()))
+					if let token = (json as? [String: String])?["token"], !token.isEmpty {
+						self.tokenProvider.token = token
+						completion(.success(()))
+					} else {
+						completion(.failure(.decoding))
+					}
 				} catch {
 					completion(.failure(.fetchingData))
 				}
@@ -46,7 +50,7 @@ final class AuthService {
 		.resume()
 	}
     
-    func send(form: RegistrationModel, completion: @escaping () -> Void) {
+    func send(form: RegistrationModel, completion: @escaping (Bool) -> Void) {
 		let url = String(format: "http://localhost:8080/signUp")
 		guard let serviceUrl = URL(string: url) else { return }
 		
@@ -64,15 +68,13 @@ final class AuthService {
 					let json = try JSONSerialization.jsonObject(with: data, options: [])
 					let token = (json as? [String: String])?["token"]
 					self.tokenProvider.token = token
-					let userData = ["email": form.email, "name": form.firstName, "lastName": form.lastName]
-					UserDefaults.standard.set(userData, forKey: "model")
-					print(self.tokenProvider.token)
+					completion(true)
 				} catch {
 					print(error)
+					completion(false)
 				}
 			}
-			completion()
 		}
 		.resume()
-    }
+	}
 }

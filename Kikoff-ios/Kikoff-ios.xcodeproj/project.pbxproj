@@ -17,10 +17,13 @@
 		576019A8282AA29B00C25B91 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576019A7282AA29B00C25B91 /* MarketViewController.swift */; };
 		576019AA282AAA1B00C25B91 /* MarketApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576019A9282AAA1B00C25B91 /* MarketApi.swift */; };
 		576019AC282AAD5900C25B91 /* MarketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576019AB282AAD5900C25B91 /* MarketProvider.swift */; };
-		576102D52835731200FD25DA /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576102D42835731200FD25DA /* ProductViewController.swift */; };
+		CE2246B928343F0F00D2F7EB /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2246B828343F0F00D2F7EB /* BasketView.swift */; };
+		CE2246BB283440CA00D2F7EB /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2246BA283440CA00D2F7EB /* BasketViewController.swift */; };
+		CE2246BD2835602300D2F7EB /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2246BC2835602300D2F7EB /* ProfileService.swift */; };
 		CE3C9E0F28109E060089D224 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C9E0E28109E060089D224 /* ProfileView.swift */; };
 		CE3C9E112810A04B0089D224 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C9E102810A04B0089D224 /* ProfileViewController.swift */; };
 		CE6DF9BB282CED4500C6ABDE /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DF9BA282CED4500C6ABDE /* MainTabBarController.swift */; };
+		CE92FFF4283598A200E10534 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576102D42835731200FD25DA /* ProductViewController.swift */; };
 		CE9BB7F82819CBBA004A2BFC /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BB7F72819CBBA004A2BFC /* RegistrationModel.swift */; };
 		DE785CF7280DDEC300082E95 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785CF6280DDEC300082E95 /* AuthorizationViewController.swift */; };
 		DE785D04280DEB3C00082E95 /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D03280DEB3C00082E95 /* ScrollableStackView.swift */; };
@@ -61,6 +64,9 @@
 		576102D42835731200FD25DA /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		65ADFA587C7F2E9253BA88DB /* Pods-Kikoff-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikoff-ios.release.xcconfig"; path = "Target Support Files/Pods-Kikoff-ios/Pods-Kikoff-ios.release.xcconfig"; sourceTree = "<group>"; };
 		A968A60DBDA0B07101CD1803 /* Pods_Kikoff_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kikoff_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE2246B828343F0F00D2F7EB /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
+		CE2246BA283440CA00D2F7EB /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		CE2246BC2835602300D2F7EB /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		CE3C9E0E28109E060089D224 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CE3C9E102810A04B0089D224 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CE6DF9BA282CED4500C6ABDE /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -144,6 +150,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE2246B628343EF300D2F7EB /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				CE2246BE2835764000D2F7EB /* Service */,
+				CE2246B728343EFE00D2F7EB /* View */,
+				CE2246BA283440CA00D2F7EB /* BasketViewController.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
+		CE2246B728343EFE00D2F7EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE2246B828343F0F00D2F7EB /* BasketView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE2246BE2835764000D2F7EB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		CE3C9E0A28109D9D0089D224 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +196,7 @@
 		CE3C9E0C28109DEE0089D224 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				CE2246BC2835602300D2F7EB /* ProfileService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -210,6 +242,7 @@
 		DE21241C280DDCB700639C77 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CE2246B628343EF300D2F7EB /* Basket */,
 				576102D3283572FF00FD25DA /* Product */,
 				CE6DF9B9282CED1500C6ABDE /* TabBar */,
 				5760199A282A750A00C25B91 /* Market */,
@@ -464,12 +497,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE92FFF4283598A200E10534 /* ProductViewController.swift in Sources */,
 				576019AA282AAA1B00C25B91 /* MarketApi.swift in Sources */,
 				DE785D08280DF01F00082E95 /* RootViewContainable.swift in Sources */,
 				576019A4282A9FC800C25B91 /* MarketCategoryCell.swift in Sources */,
-				576102D52835731200FD25DA /* ProductViewController.swift in Sources */,
 				5760199E282A7CE300C25B91 /* UICollectionView+Utils.swift in Sources */,
 				DE785D0F280DF6C400082E95 /* Colors.swift in Sources */,
+				CE2246B928343F0F00D2F7EB /* BasketView.swift in Sources */,
 				576019A6282A9FDD00C25B91 /* MarketProductCell.swift in Sources */,
 				5760199C282A751800C25B91 /* MarketView.swift in Sources */,
 				DE785D32281093A500082E95 /* TokenProvider.swift in Sources */,
@@ -482,6 +516,7 @@
 				DE785D11280DF7A000082E95 /* UINavigationController+Convience.swift in Sources */,
 				DE785D342810946B00082E95 /* UITextField+Utils.swift in Sources */,
 				CE6DF9BB282CED4500C6ABDE /* MainTabBarController.swift in Sources */,
+				CE2246BB283440CA00D2F7EB /* BasketViewController.swift in Sources */,
 				DE785D20280E060400082E95 /* VoidClosure.swift in Sources */,
 				DE785D04280DEB3C00082E95 /* ScrollableStackView.swift in Sources */,
 				576019A0282A911000C25B91 /* CollectionHeaderFooterView.swift in Sources */,
@@ -496,6 +531,7 @@
 				DEE22AFA28357EF200584191 /* BasketService.swift in Sources */,
 				DE88F1B8280DD922009DD45D /* AppDelegate.swift in Sources */,
 				DE785D22280E1A1400082E95 /* StylingButton.swift in Sources */,
+				CE2246BD2835602300D2F7EB /* ProfileService.swift in Sources */,
 				DE785D13280DFBF600082E95 /* UIStackView+Utils.swift in Sources */,
 				DE785D2A280F3A4100082E95 /* PersonalInfoPassStepViewController.swift in Sources */,
 				CE3C9E0F28109E060089D224 /* ProfileView.swift in Sources */,

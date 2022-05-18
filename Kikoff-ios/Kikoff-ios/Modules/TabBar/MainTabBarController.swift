@@ -16,8 +16,12 @@ final class MainTabBarController: UITabBarController {
 	private func setupScreens() {
 		let profile = ProfileViewController()
 		let market = MarketViewController()
+		let basket = BasketViewController()
 		
-		viewControllers = [market, profile]
+		viewControllers = [market, basket, profile].map {
+			UINavigationController(navigationBar: NavigationBar.self, rootViewController: $0)
+		}
+		tabBarItem.image = UIImage(named: "profile")
 		selectedIndex = 1
 	}
 }

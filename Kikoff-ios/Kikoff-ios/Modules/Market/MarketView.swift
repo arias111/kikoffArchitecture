@@ -26,6 +26,7 @@ final class MarketView: UIView {
             CollectionHeaderFooterView.self,
             of: UICollectionView.elementKindSectionHeader
         )
+		collectionView.automaticallyAdjustsScrollIndicatorInsets = false
         return collectionView
     }()
 
@@ -84,8 +85,10 @@ final class MarketView: UIView {
     // MARK: Initial Configuration
 
     private func setupView() {
+		self.backgroundColor = .white
         addSubview(collectionView) {
-            $0.edges.equalToSuperview()
+			$0.left.right.top.equalToSuperview()
+			$0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
 
         addSubview(loader) {
