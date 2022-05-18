@@ -1,5 +1,6 @@
 package com.itis.kikoff.services;
 
+import com.auth0.jwt.JWT;
 import com.itis.kikoff.models.enums.Status;
 import com.itis.kikoff.models.payments.Payment;
 import com.itis.kikoff.models.payments.PersonalAccount;
@@ -23,8 +24,9 @@ public class PaymentServiceImpl implements PaymentService {
     private PersonalAccountRepository personalAccountRepository;
 
     @Override
-    public void pay(Long id) {
-        PersonalAccount personalAccount = personalAccountRepository.getById(id);
+    public void pay(String token) {
+        Long id = Long.parseLong(JWT.decode(token).getSubject());
+        PersonalAccount personalAccount = personalAccountRepository.getByUser_Id(id);
         Payment payment = Payment.builder()
                 .status(Status.SUCCESS)
                 .sum(5000)
@@ -35,5 +37,17 @@ public class PaymentServiceImpl implements PaymentService {
         personalAccount.setBalance(sum + 5000);
         personalAccountRepository.save(personalAccount);
         paymentRepository.save(payment);
+    }
+
+    @Override
+    public int getBalance(String token) {
+        Long id = Long.parseLong(JWT.decode(token).getSubject());
+        Optional<PersonalAccount> optionalPersonalAccount = personalAccountRepository.findByUser_Id(id);
+        if (optionalPersonalAccount.isPresent()) {
+            int balance = optionalPersonalAccount.get().getBalance();
+            return balance;
+        } else {
+            throw new EntityNotFoundException("Personal Account not found");
+        }
     }
 }

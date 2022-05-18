@@ -1,5 +1,6 @@
 package com.itis.kikoff.services;
 
 public interface PaymentService {
-    void pay(Long id);
+    void pay(String token);
+    int getBalance(String token);
 }
