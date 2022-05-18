@@ -57,6 +57,9 @@ public class BillServiceImpl implements BillService {
     public BillIdDto successBill(BillIdDto billIdDto) {
         Bill bill = billRepository.getById(billIdDto.getId());
         PersonalAccount personalAccount = personalAccountRepository.getById(bill.getPersonalAccount().getId());
+        if (personalAccount.getBalance() < bill.getPrice()) {
+            throw new IllegalStateException("Not enough money in your personal account");
+        }
         bill.setStatus(Status.SUCCESS);
         billRepository.save(bill);
         int balance = personalAccount.getBalance() - bill.getPrice();

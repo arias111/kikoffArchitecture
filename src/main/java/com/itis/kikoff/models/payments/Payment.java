@@ -8,11 +8,11 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
+@Builder
 @Table(name = "payments")
 public class Payment {
     @Id
