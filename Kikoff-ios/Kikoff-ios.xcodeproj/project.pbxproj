@@ -1,0 +1,750 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F0B22A40E6DA21FC212DAC1 /* Pods_Kikoff_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A968A60DBDA0B07101CD1803 /* Pods_Kikoff_ios.framework */; };
+		5760199C282A751800C25B91 /* MarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760199B282A751800C25B91 /* MarketView.swift */; };
+		5760199E282A7CE300C25B91 /* UICollectionView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760199D282A7CE300C25B91 /* UICollectionView+Utils.swift */; };
+		576019A0282A911000C25B91 /* CollectionHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760199F282A911000C25B91 /* CollectionHeaderFooterView.swift */; };
+		576019A2282A97C300C25B91 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576019A1282A97C300C25B91 /* Configurable.swift */; };
+		576019A4282A9FC800C25B91 /* MarketCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576019A3282A9FC800C25B91 /* MarketCategoryCell.swift */; };
+		576019A6282A9FDD00C25B91 /* MarketProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576019A5282A9FDD00C25B91 /* MarketProductCell.swift */; };
+		576019A8282AA29B00C25B91 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576019A7282AA29B00C25B91 /* MarketViewController.swift */; };
+		576019AA282AAA1B00C25B91 /* MarketApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576019A9282AAA1B00C25B91 /* MarketApi.swift */; };
+		576019AC282AAD5900C25B91 /* MarketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576019AB282AAD5900C25B91 /* MarketProvider.swift */; };
+		CE2246B928343F0F00D2F7EB /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2246B828343F0F00D2F7EB /* BasketView.swift */; };
+		CE2246BB283440CA00D2F7EB /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2246BA283440CA00D2F7EB /* BasketViewController.swift */; };
+		CE2246BD2835602300D2F7EB /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2246BC2835602300D2F7EB /* ProfileService.swift */; };
+		CE3C9E0F28109E060089D224 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C9E0E28109E060089D224 /* ProfileView.swift */; };
+		CE3C9E112810A04B0089D224 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C9E102810A04B0089D224 /* ProfileViewController.swift */; };
+		CE6DF9BB282CED4500C6ABDE /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DF9BA282CED4500C6ABDE /* MainTabBarController.swift */; };
+		CE92FFF4283598A200E10534 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576102D42835731200FD25DA /* ProductViewController.swift */; };
+		CE9BB7F82819CBBA004A2BFC /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9BB7F72819CBBA004A2BFC /* RegistrationModel.swift */; };
+		DE785CF7280DDEC300082E95 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785CF6280DDEC300082E95 /* AuthorizationViewController.swift */; };
+		DE785D04280DEB3C00082E95 /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D03280DEB3C00082E95 /* ScrollableStackView.swift */; };
+		DE785D06280DEC2600082E95 /* UIView+SnapkitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D05280DEC2600082E95 /* UIView+SnapkitUtils.swift */; };
+		DE785D08280DF01F00082E95 /* RootViewContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D07280DF01F00082E95 /* RootViewContainable.swift */; };
+		DE785D0C280DF62200082E95 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D0B280DF62200082E95 /* NavigationBar.swift */; };
+		DE785D0F280DF6C400082E95 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D0E280DF6C400082E95 /* Colors.swift */; };
+		DE785D11280DF7A000082E95 /* UINavigationController+Convience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D10280DF7A000082E95 /* UINavigationController+Convience.swift */; };
+		DE785D13280DFBF600082E95 /* UIStackView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D12280DFBF600082E95 /* UIStackView+Utils.swift */; };
+		DE785D15280DFD7500082E95 /* InsettingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D14280DFD7500082E95 /* InsettingTextField.swift */; };
+		DE785D18280DFF7700082E95 /* AuthorizationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D17280DFF7700082E95 /* AuthorizationForm.swift */; };
+		DE785D1C280E059C00082E95 /* StylingField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D1B280E059C00082E95 /* StylingField.swift */; };
+		DE785D20280E060400082E95 /* VoidClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D1F280E060400082E95 /* VoidClosure.swift */; };
+		DE785D22280E1A1400082E95 /* StylingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D21280E1A1400082E95 /* StylingButton.swift */; };
+		DE785D24280E1A2C00082E95 /* TappableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D23280E1A2C00082E95 /* TappableButton.swift */; };
+		DE785D28280F32E800082E95 /* UsernamePassStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D27280F32E800082E95 /* UsernamePassStepViewController.swift */; };
+		DE785D2A280F3A4100082E95 /* PersonalInfoPassStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D29280F3A4100082E95 /* PersonalInfoPassStepViewController.swift */; };
+		DE785D2E28107BA300082E95 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D2D28107BA300082E95 /* AuthService.swift */; };
+		DE785D32281093A500082E95 /* TokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D31281093A500082E95 /* TokenProvider.swift */; };
+		DE785D342810946B00082E95 /* UITextField+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE785D332810946B00082E95 /* UITextField+Utils.swift */; };
+		DE88F1B8280DD922009DD45D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88F1B7280DD922009DD45D /* AppDelegate.swift */; };
+		DE88F1BA280DD922009DD45D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88F1B9280DD922009DD45D /* SceneDelegate.swift */; };
+		DE88F1C1280DD924009DD45D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE88F1C0280DD924009DD45D /* Assets.xcassets */; };
+		DE88F1C4280DD924009DD45D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE88F1C2280DD924009DD45D /* LaunchScreen.storyboard */; };
+		DEE22AFA28357EF200584191 /* BasketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE22AF928357EF200584191 /* BasketService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5760199B282A751800C25B91 /* MarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketView.swift; sourceTree = "<group>"; };
+		5760199D282A7CE300C25B91 /* UICollectionView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Utils.swift"; sourceTree = "<group>"; };
+		5760199F282A911000C25B91 /* CollectionHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderFooterView.swift; sourceTree = "<group>"; };
+		576019A1282A97C300C25B91 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		576019A3282A9FC800C25B91 /* MarketCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCategoryCell.swift; sourceTree = "<group>"; };
+		576019A5282A9FDD00C25B91 /* MarketProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketProductCell.swift; sourceTree = "<group>"; };
+		576019A7282AA29B00C25B91 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
+		576019A9282AAA1B00C25B91 /* MarketApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketApi.swift; sourceTree = "<group>"; };
+		576019AB282AAD5900C25B91 /* MarketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketProvider.swift; sourceTree = "<group>"; };
+		576102D42835731200FD25DA /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		65ADFA587C7F2E9253BA88DB /* Pods-Kikoff-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikoff-ios.release.xcconfig"; path = "Target Support Files/Pods-Kikoff-ios/Pods-Kikoff-ios.release.xcconfig"; sourceTree = "<group>"; };
+		A968A60DBDA0B07101CD1803 /* Pods_Kikoff_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kikoff_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE2246B828343F0F00D2F7EB /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
+		CE2246BA283440CA00D2F7EB /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		CE2246BC2835602300D2F7EB /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		CE3C9E0E28109E060089D224 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		CE3C9E102810A04B0089D224 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CE6DF9BA282CED4500C6ABDE /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		CE9BB7F72819CBBA004A2BFC /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
+		D9F523ABBDDF819185979B74 /* Pods-Kikoff-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikoff-ios.debug.xcconfig"; path = "Target Support Files/Pods-Kikoff-ios/Pods-Kikoff-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		DE785CF6280DDEC300082E95 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		DE785D03280DEB3C00082E95 /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
+		DE785D05280DEC2600082E95 /* UIView+SnapkitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SnapkitUtils.swift"; sourceTree = "<group>"; };
+		DE785D07280DF01F00082E95 /* RootViewContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewContainable.swift; sourceTree = "<group>"; };
+		DE785D0B280DF62200082E95 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		DE785D0E280DF6C400082E95 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		DE785D10280DF7A000082E95 /* UINavigationController+Convience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Convience.swift"; sourceTree = "<group>"; };
+		DE785D12280DFBF600082E95 /* UIStackView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utils.swift"; sourceTree = "<group>"; };
+		DE785D14280DFD7500082E95 /* InsettingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsettingTextField.swift; sourceTree = "<group>"; };
+		DE785D17280DFF7700082E95 /* AuthorizationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationForm.swift; sourceTree = "<group>"; };
+		DE785D1B280E059C00082E95 /* StylingField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylingField.swift; sourceTree = "<group>"; };
+		DE785D1F280E060400082E95 /* VoidClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidClosure.swift; sourceTree = "<group>"; };
+		DE785D21280E1A1400082E95 /* StylingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylingButton.swift; sourceTree = "<group>"; };
+		DE785D23280E1A2C00082E95 /* TappableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableButton.swift; sourceTree = "<group>"; };
+		DE785D27280F32E800082E95 /* UsernamePassStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernamePassStepViewController.swift; sourceTree = "<group>"; };
+		DE785D29280F3A4100082E95 /* PersonalInfoPassStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoPassStepViewController.swift; sourceTree = "<group>"; };
+		DE785D2D28107BA300082E95 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		DE785D31281093A500082E95 /* TokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenProvider.swift; sourceTree = "<group>"; };
+		DE785D332810946B00082E95 /* UITextField+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Utils.swift"; sourceTree = "<group>"; };
+		DE88F1B4280DD922009DD45D /* Kikoff-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kikoff-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE88F1B7280DD922009DD45D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE88F1B9280DD922009DD45D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DE88F1C0280DD924009DD45D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE88F1C3280DD924009DD45D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE88F1C5280DD924009DD45D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEE22AF928357EF200584191 /* BasketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE88F1B1280DD922009DD45D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F0B22A40E6DA21FC212DAC1 /* Pods_Kikoff_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5760199A282A750A00C25B91 /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				5760199B282A751800C25B91 /* MarketView.swift */,
+				576019A3282A9FC800C25B91 /* MarketCategoryCell.swift */,
+				576019A5282A9FDD00C25B91 /* MarketProductCell.swift */,
+				576019A7282AA29B00C25B91 /* MarketViewController.swift */,
+				576019A9282AAA1B00C25B91 /* MarketApi.swift */,
+				576019AB282AAD5900C25B91 /* MarketProvider.swift */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		576102D3283572FF00FD25DA /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				576102D42835731200FD25DA /* ProductViewController.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		B809946326BAC8974E044866 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A968A60DBDA0B07101CD1803 /* Pods_Kikoff_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF62E27EF410A78A855FE2F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D9F523ABBDDF819185979B74 /* Pods-Kikoff-ios.debug.xcconfig */,
+				65ADFA587C7F2E9253BA88DB /* Pods-Kikoff-ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE2246B628343EF300D2F7EB /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				CE2246BE2835764000D2F7EB /* Service */,
+				CE2246B728343EFE00D2F7EB /* View */,
+				CE2246BA283440CA00D2F7EB /* BasketViewController.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
+		CE2246B728343EFE00D2F7EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE2246B828343F0F00D2F7EB /* BasketView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE2246BE2835764000D2F7EB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CE3C9E0A28109D9D0089D224 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CE3C9E0D28109DF50089D224 /* View */,
+				CE3C9E0C28109DEE0089D224 /* Service */,
+				CE3C9E0B28109DE80089D224 /* Model */,
+				CE3C9E102810A04B0089D224 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CE3C9E0B28109DE80089D224 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE3C9E0C28109DEE0089D224 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CE2246BC2835602300D2F7EB /* ProfileService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CE3C9E0D28109DF50089D224 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE3C9E0E28109E060089D224 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE6DF9B9282CED1500C6ABDE /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CE6DF9BA282CED4500C6ABDE /* MainTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		DE21241A280DDCAA00639C77 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				DE88F1B7280DD922009DD45D /* AppDelegate.swift */,
+				DE88F1B9280DD922009DD45D /* SceneDelegate.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		DE21241B280DDCAF00639C77 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE785D05280DEC2600082E95 /* UIView+SnapkitUtils.swift */,
+				DE785D10280DF7A000082E95 /* UINavigationController+Convience.swift */,
+				DE785D12280DFBF600082E95 /* UIStackView+Utils.swift */,
+				DE785D1F280E060400082E95 /* VoidClosure.swift */,
+				DE785D332810946B00082E95 /* UITextField+Utils.swift */,
+				5760199D282A7CE300C25B91 /* UICollectionView+Utils.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DE21241C280DDCB700639C77 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CE2246B628343EF300D2F7EB /* Basket */,
+				576102D3283572FF00FD25DA /* Product */,
+				CE6DF9B9282CED1500C6ABDE /* TabBar */,
+				5760199A282A750A00C25B91 /* Market */,
+				CE3C9E0A28109D9D0089D224 /* Profile */,
+				DE785D25280F326300082E95 /* Registration */,
+				DE785CF5280DDEA300082E95 /* Authorization */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		DE21241D280DDCEB00639C77 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DE785D302810939700082E95 /* Services */,
+				DE21241E280DDD0600639C77 /* BaseComponents */,
+				DE21241B280DDCAF00639C77 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DE21241E280DDD0600639C77 /* BaseComponents */ = {
+			isa = PBXGroup;
+			children = (
+				DE785D0D280DF6BB00082E95 /* Colors */,
+				DE785D02280DEB2F00082E95 /* UI */,
+			);
+			path = BaseComponents;
+			sourceTree = "<group>";
+		};
+		DE212420280DDD2E00639C77 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE88F1C0280DD924009DD45D /* Assets.xcassets */,
+				DE88F1C2280DD924009DD45D /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DE785CF5280DDEA300082E95 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				DE785D17280DFF7700082E95 /* AuthorizationForm.swift */,
+				DE785CF6280DDEC300082E95 /* AuthorizationViewController.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		DE785D02280DEB2F00082E95 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DE785D03280DEB3C00082E95 /* ScrollableStackView.swift */,
+				DE785D07280DF01F00082E95 /* RootViewContainable.swift */,
+				DE785D0B280DF62200082E95 /* NavigationBar.swift */,
+				DE785D14280DFD7500082E95 /* InsettingTextField.swift */,
+				DE785D1B280E059C00082E95 /* StylingField.swift */,
+				DE785D21280E1A1400082E95 /* StylingButton.swift */,
+				DE785D23280E1A2C00082E95 /* TappableButton.swift */,
+				5760199F282A911000C25B91 /* CollectionHeaderFooterView.swift */,
+				576019A1282A97C300C25B91 /* Configurable.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		DE785D0D280DF6BB00082E95 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				DE785D0E280DF6C400082E95 /* Colors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		DE785D25280F326300082E95 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				DE785D27280F32E800082E95 /* UsernamePassStepViewController.swift */,
+				DE785D29280F3A4100082E95 /* PersonalInfoPassStepViewController.swift */,
+				DE785D2D28107BA300082E95 /* AuthService.swift */,
+				CE9BB7F72819CBBA004A2BFC /* RegistrationModel.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		DE785D302810939700082E95 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DE785D31281093A500082E95 /* TokenProvider.swift */,
+				DEE22AF928357EF200584191 /* BasketService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DE88F1AB280DD922009DD45D = {
+			isa = PBXGroup;
+			children = (
+				DE88F1B6280DD922009DD45D /* Kikoff-ios */,
+				DE88F1B5280DD922009DD45D /* Products */,
+				BF62E27EF410A78A855FE2F0 /* Pods */,
+				B809946326BAC8974E044866 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DE88F1B5280DD922009DD45D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE88F1B4280DD922009DD45D /* Kikoff-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE88F1B6280DD922009DD45D /* Kikoff-ios */ = {
+			isa = PBXGroup;
+			children = (
+				DE212420280DDD2E00639C77 /* Resources */,
+				DE21241A280DDCAA00639C77 /* Root */,
+				DE21241D280DDCEB00639C77 /* Common */,
+				DE21241C280DDCB700639C77 /* Modules */,
+				DE88F1C5280DD924009DD45D /* Info.plist */,
+			);
+			path = "Kikoff-ios";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE88F1B3280DD922009DD45D /* Kikoff-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE88F1C8280DD924009DD45D /* Build configuration list for PBXNativeTarget "Kikoff-ios" */;
+			buildPhases = (
+				C404BBC07510A58664199C49 /* [CP] Check Pods Manifest.lock */,
+				DE212419280DDB9100639C77 /* Swiftlint */,
+				DE88F1B0280DD922009DD45D /* Sources */,
+				DE88F1B1280DD922009DD45D /* Frameworks */,
+				DE88F1B2280DD922009DD45D /* Resources */,
+				079E5914AC8F69F941AD3143 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Kikoff-ios";
+			productName = "Kikoff-ios";
+			productReference = DE88F1B4280DD922009DD45D /* Kikoff-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE88F1AC280DD922009DD45D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					DE88F1B3280DD922009DD45D = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = DE88F1AF280DD922009DD45D /* Build configuration list for PBXProject "Kikoff-ios" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE88F1AB280DD922009DD45D;
+			productRefGroup = DE88F1B5280DD922009DD45D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE88F1B3280DD922009DD45D /* Kikoff-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE88F1B2280DD922009DD45D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE88F1C4280DD924009DD45D /* LaunchScreen.storyboard in Resources */,
+				DE88F1C1280DD924009DD45D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		079E5914AC8F69F941AD3143 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kikoff-ios/Pods-Kikoff-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kikoff-ios/Pods-Kikoff-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kikoff-ios/Pods-Kikoff-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C404BBC07510A58664199C49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kikoff-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE212419280DDB9100639C77 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE88F1B0280DD922009DD45D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE92FFF4283598A200E10534 /* ProductViewController.swift in Sources */,
+				576019AA282AAA1B00C25B91 /* MarketApi.swift in Sources */,
+				DE785D08280DF01F00082E95 /* RootViewContainable.swift in Sources */,
+				576019A4282A9FC800C25B91 /* MarketCategoryCell.swift in Sources */,
+				5760199E282A7CE300C25B91 /* UICollectionView+Utils.swift in Sources */,
+				DE785D0F280DF6C400082E95 /* Colors.swift in Sources */,
+				CE2246B928343F0F00D2F7EB /* BasketView.swift in Sources */,
+				576019A6282A9FDD00C25B91 /* MarketProductCell.swift in Sources */,
+				5760199C282A751800C25B91 /* MarketView.swift in Sources */,
+				DE785D32281093A500082E95 /* TokenProvider.swift in Sources */,
+				DE785D15280DFD7500082E95 /* InsettingTextField.swift in Sources */,
+				576019A2282A97C300C25B91 /* Configurable.swift in Sources */,
+				CE9BB7F82819CBBA004A2BFC /* RegistrationModel.swift in Sources */,
+				DE785D18280DFF7700082E95 /* AuthorizationForm.swift in Sources */,
+				DE785CF7280DDEC300082E95 /* AuthorizationViewController.swift in Sources */,
+				576019AC282AAD5900C25B91 /* MarketProvider.swift in Sources */,
+				DE785D11280DF7A000082E95 /* UINavigationController+Convience.swift in Sources */,
+				DE785D342810946B00082E95 /* UITextField+Utils.swift in Sources */,
+				CE6DF9BB282CED4500C6ABDE /* MainTabBarController.swift in Sources */,
+				CE2246BB283440CA00D2F7EB /* BasketViewController.swift in Sources */,
+				DE785D20280E060400082E95 /* VoidClosure.swift in Sources */,
+				DE785D04280DEB3C00082E95 /* ScrollableStackView.swift in Sources */,
+				576019A0282A911000C25B91 /* CollectionHeaderFooterView.swift in Sources */,
+				DE785D06280DEC2600082E95 /* UIView+SnapkitUtils.swift in Sources */,
+				DE785D2E28107BA300082E95 /* AuthService.swift in Sources */,
+				DE785D1C280E059C00082E95 /* StylingField.swift in Sources */,
+				DE785D0C280DF62200082E95 /* NavigationBar.swift in Sources */,
+				DE785D24280E1A2C00082E95 /* TappableButton.swift in Sources */,
+				CE3C9E112810A04B0089D224 /* ProfileViewController.swift in Sources */,
+				576019A8282AA29B00C25B91 /* MarketViewController.swift in Sources */,
+				DE785D28280F32E800082E95 /* UsernamePassStepViewController.swift in Sources */,
+				DEE22AFA28357EF200584191 /* BasketService.swift in Sources */,
+				DE88F1B8280DD922009DD45D /* AppDelegate.swift in Sources */,
+				DE785D22280E1A1400082E95 /* StylingButton.swift in Sources */,
+				CE2246BD2835602300D2F7EB /* ProfileService.swift in Sources */,
+				DE785D13280DFBF600082E95 /* UIStackView+Utils.swift in Sources */,
+				DE785D2A280F3A4100082E95 /* PersonalInfoPassStepViewController.swift in Sources */,
+				CE3C9E0F28109E060089D224 /* ProfileView.swift in Sources */,
+				DE88F1BA280DD922009DD45D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DE88F1C2280DD924009DD45D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE88F1C3280DD924009DD45D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE88F1C6280DD924009DD45D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE88F1C7280DD924009DD45D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE88F1C9280DD924009DD45D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9F523ABBDDF819185979B74 /* Pods-Kikoff-ios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2V32A9N2B5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Kikoff-ios/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "akhaman.Kikoff-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE88F1CA280DD924009DD45D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65ADFA587C7F2E9253BA88DB /* Pods-Kikoff-ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2V32A9N2B5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Kikoff-ios/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "akhaman.Kikoff-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE88F1AF280DD922009DD45D /* Build configuration list for PBXProject "Kikoff-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE88F1C6280DD924009DD45D /* Debug */,
+				DE88F1C7280DD924009DD45D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE88F1C8280DD924009DD45D /* Build configuration list for PBXNativeTarget "Kikoff-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE88F1C9280DD924009DD45D /* Debug */,
+				DE88F1CA280DD924009DD45D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE88F1AC280DD922009DD45D /* Project object */;
+}
