@@ -14,7 +14,8 @@ final class AuthorizationViewController: UIViewController, RootViewContainable, 
     typealias RootView = ScrollableStackView
     
     private let service = AuthService()
-    
+	private let tokenProvider = TokenProvider()
+
     // MARK: Subviews
     
     private lazy var form = AuthorizationForm()
@@ -29,6 +30,7 @@ final class AuthorizationViewController: UIViewController, RootViewContainable, 
         super.viewDidLoad()
         setupNavigationItem()
         setupView()
+		print(tokenProvider.token)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

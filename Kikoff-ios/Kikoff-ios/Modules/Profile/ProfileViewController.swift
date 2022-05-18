@@ -7,14 +7,26 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class ProfileViewController: UIViewController {
 	private let customView = ProfileView()
+	private let tokenProvider = TokenProvider()
+	private let service = ProfileService()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		customView.delegate = self
+		service.getBalance { result in
+			switch result {
+			case .success(let str):
+				self.customView.updateUserData(model: str)
+			case .failure(let error):
+				print(error)
+			}
+		}
 		title = "Nail Galiev"
+		navigationController?.navigationBar.removeFromSuperview()
 	}
 	
 	override func loadView() {
@@ -23,6 +35,26 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: ProfileViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+	func logout() {
+		guard let url = URL(string: "http://localhost:8080/logout") else { return }
+		var request = URLRequest(url: url)
+		request.httpMethod = "POST"
+		request.setValue(tokenProvider.token, forHTTPHeaderField: "X-TOKEN")
+		URLSession.shared.dataTask(with: request) { data, _, error in
+			if let error = error {
+				print(error)
+			}
+			if let data = data {
+				self.tokenProvider.token = nil
+				DispatchQueue.main.async {
+					self.navigationController?.setViewControllers([AuthorizationViewController()], animated: true)
+					print("logout")
+				}
+			}
+		}
+		.resume()
+	}
+	
 	func editProfile() {
 		let actionSheet = UIAlertController(
 			title: nil,

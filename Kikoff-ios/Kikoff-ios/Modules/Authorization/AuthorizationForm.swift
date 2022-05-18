@@ -19,7 +19,7 @@ final class AuthorizationForm: UIView {
     private lazy var passwordField = StylingField(style: .auth(placeholder: "Password"))
     private lazy var authButton = StylingButton(style: .primary(title: "Authorize"))
     private lazy var createAccountButton = StylingButton(style: .suggestion(title: "CREATE ACCOUNT"))
-    
+
     // MARK: Init
     
     override init(frame: CGRect) {
