@@ -17,6 +17,7 @@
 		576019A8282AA29B00C25B91 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576019A7282AA29B00C25B91 /* MarketViewController.swift */; };
 		576019AA282AAA1B00C25B91 /* MarketApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576019A9282AAA1B00C25B91 /* MarketApi.swift */; };
 		576019AC282AAD5900C25B91 /* MarketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576019AB282AAD5900C25B91 /* MarketProvider.swift */; };
+		576102D52835731200FD25DA /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576102D42835731200FD25DA /* ProductViewController.swift */; };
 		CE3C9E0F28109E060089D224 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C9E0E28109E060089D224 /* ProfileView.swift */; };
 		CE3C9E112810A04B0089D224 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C9E102810A04B0089D224 /* ProfileViewController.swift */; };
 		CE6DF9BB282CED4500C6ABDE /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6DF9BA282CED4500C6ABDE /* MainTabBarController.swift */; };
@@ -56,6 +57,7 @@
 		576019A7282AA29B00C25B91 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
 		576019A9282AAA1B00C25B91 /* MarketApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketApi.swift; sourceTree = "<group>"; };
 		576019AB282AAD5900C25B91 /* MarketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketProvider.swift; sourceTree = "<group>"; };
+		576102D42835731200FD25DA /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		65ADFA587C7F2E9253BA88DB /* Pods-Kikoff-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikoff-ios.release.xcconfig"; path = "Target Support Files/Pods-Kikoff-ios/Pods-Kikoff-ios.release.xcconfig"; sourceTree = "<group>"; };
 		A968A60DBDA0B07101CD1803 /* Pods_Kikoff_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kikoff_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3C9E0E28109E060089D224 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,14 @@
 				576019AB282AAD5900C25B91 /* MarketProvider.swift */,
 			);
 			path = Market;
+			sourceTree = "<group>";
+		};
+		576102D3283572FF00FD25DA /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				576102D42835731200FD25DA /* ProductViewController.swift */,
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 		B809946326BAC8974E044866 /* Frameworks */ = {
@@ -198,6 +208,7 @@
 		DE21241C280DDCB700639C77 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				576102D3283572FF00FD25DA /* Product */,
 				CE6DF9B9282CED1500C6ABDE /* TabBar */,
 				5760199A282A750A00C25B91 /* Market */,
 				CE3C9E0A28109D9D0089D224 /* Profile */,
@@ -453,6 +464,7 @@
 				576019AA282AAA1B00C25B91 /* MarketApi.swift in Sources */,
 				DE785D08280DF01F00082E95 /* RootViewContainable.swift in Sources */,
 				576019A4282A9FC800C25B91 /* MarketCategoryCell.swift in Sources */,
+				576102D52835731200FD25DA /* ProductViewController.swift in Sources */,
 				5760199E282A7CE300C25B91 /* UICollectionView+Utils.swift in Sources */,
 				DE785D0F280DF6C400082E95 /* Colors.swift in Sources */,
 				576019A6282A9FDD00C25B91 /* MarketProductCell.swift in Sources */,

@@ -77,5 +77,7 @@ final class MarketViewController: UIViewController, RootViewContainable {
         present(alert, animated: true)
     }
 
-    private func show(product: MarketProduct) {}
+    private func show(product: MarketProduct) {
+
+    }
 }
