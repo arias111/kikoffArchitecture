@@ -48,6 +48,7 @@
 		DE88F1BA280DD922009DD45D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88F1B9280DD922009DD45D /* SceneDelegate.swift */; };
 		DE88F1C1280DD924009DD45D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE88F1C0280DD924009DD45D /* Assets.xcassets */; };
 		DE88F1C4280DD924009DD45D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE88F1C2280DD924009DD45D /* LaunchScreen.storyboard */; };
+		DEE22AFA28357EF200584191 /* BasketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE22AF928357EF200584191 /* BasketService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		DE88F1C0280DD924009DD45D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE88F1C3280DD924009DD45D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE88F1C5280DD924009DD45D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEE22AF928357EF200584191 /* BasketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				DE785D31281093A500082E95 /* TokenProvider.swift */,
+				DEE22AF928357EF200584191 /* BasketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				CE3C9E112810A04B0089D224 /* ProfileViewController.swift in Sources */,
 				576019A8282AA29B00C25B91 /* MarketViewController.swift in Sources */,
 				DE785D28280F32E800082E95 /* UsernamePassStepViewController.swift in Sources */,
+				DEE22AFA28357EF200584191 /* BasketService.swift in Sources */,
 				DE88F1B8280DD922009DD45D /* AppDelegate.swift in Sources */,
 				DE785D22280E1A1400082E95 /* StylingButton.swift in Sources */,
 				CE2246BD2835602300D2F7EB /* ProfileService.swift in Sources */,
