@@ -27,6 +27,7 @@ public class ProductRespDto {
             ProductRespDto productDto = ProductRespDto.builder()
                     .id(product.getId())
                     .name(product.getName())
+                    .url(product.getUrl())
                     .countOfProducts(product.getCountOfProducts())
                     .priceOfOne(product.getPriceOfOne())
                     .categoryId(product.getCategories().getId())
@@ -51,6 +52,7 @@ public class ProductRespDto {
                 .countOfProducts(productDto.getCountOfProducts())
                 .priceOfOne(productDto.getPriceOfOne())
                 .name(productDto.getName())
+                .url(productDto.getUrl())
                 .categories(category)
                 .basketProducts(new ArrayList<>())
                 .billProductList(new ArrayList<>()).build();
