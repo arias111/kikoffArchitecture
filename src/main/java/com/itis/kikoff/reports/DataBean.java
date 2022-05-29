@@ -1,4 +1,4 @@
-package com.itis.kikoff;
+package com.itis.kikoff.reports;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

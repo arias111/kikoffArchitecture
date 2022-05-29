@@ -1,4 +1,4 @@
-package com.itis.kikoff;
+package com.itis.kikoff.reports;
 
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;

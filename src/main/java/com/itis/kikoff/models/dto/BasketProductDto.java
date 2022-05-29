@@ -24,13 +24,4 @@ public class BasketProductDto {
                 .product(product)
                 .build();
     }
-//    public static BasketProduct to1(Long userId, List<Product> productList) {
-//
-//        return BasketProduct.builder()
-//                .basket(basket)
-//                .product(product)
-//                .build();
-//    }
-//    private Basket basket;
-//    private Product product;
 }

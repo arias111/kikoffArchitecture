@@ -8,10 +8,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,19 +20,20 @@ public class ProductAndBasketController {
     private ProductAndBasketService productAndBasketService;
 
     @PostMapping("/basket/product/addToBasket")
-    public ResponseEntity<?> addToBasket(@RequestBody BasketProductDto basketProductDto) {
+    public ResponseEntity<?> addToBasket(@RequestHeader("X-TOKEN") String token, @RequestBody BasketProductDto basketProductDto) {
         productAndBasketService.addToBasket(basketProductDto);
         return ResponseEntity.ok("");
     }
 
     @PostMapping("/basket/product/deleteFromBasket")
-    public ResponseEntity<?> deleteFromBasket(@RequestBody BasketProductDto basketProductDto) {
+    public ResponseEntity<?> deleteFromBasket(@RequestHeader("X-TOKEN") String token, @RequestBody BasketProductDto basketProductDto) {
         productAndBasketService.deleteFromBasket(basketProductDto);
         return ResponseEntity.ok("");
     }
 
-    @PostMapping("/basket/product/getProducts")
-    public ResponseEntity<List<ProductDto>> getProductsFromBasket(@RequestBody BasketIdDto basketIdDto) {
-        return ResponseEntity.ok(productAndBasketService.getProductsFromBasket(basketIdDto));
+    @GetMapping("/basket/product/getProducts/{basket-id}")
+    public ResponseEntity<List<ProductDto>> getProducts(@RequestHeader("X-TOKEN") String token, @PathVariable("basket-id") Long basketId) {
+        return ResponseEntity.ok(productAndBasketService.getProductsFromBasket(basketId));
     }
+
 }

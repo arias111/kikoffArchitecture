@@ -1,7 +1,6 @@
 package com.itis.kikoff.services;
 
-import com.itis.kikoff.models.dto.CategoryDto;
-import com.itis.kikoff.models.dto.ProductDto;
+import com.itis.kikoff.models.dto.*;
 import com.itis.kikoff.models.shop.Product;
 import com.itis.kikoff.repositories.CategoryRepository;
 import com.itis.kikoff.repositories.ProductRepository;
@@ -20,14 +19,15 @@ public class CategoryServiceImpl implements CategoryService {
     private ProductRepository productRepository;
 
     @Override
-    public List<CategoryDto> getAll() {
-        return CategoryDto.from(categoriesRepository.findAll());
+    public List<CategoryRespDto> getAll() {
+        return CategoryRespDto.from(categoriesRepository.findAll());
     }
 
     @Override
-    public List<ProductDto> getProducts(CategoryDto categoryDto) {
-        List<Product> products = productRepository.findAllByCategories_Id(categoryDto.getId());
-        return ProductDto.from(products);
+    public List<ProductRespDto> getProducts(Long id) {
+        List<Product> products = productRepository.findAllByCategories_Id(id);
+        List<ProductRespDto> result = ProductRespDto.from(products);
+        return result;
     }
 
     @Override

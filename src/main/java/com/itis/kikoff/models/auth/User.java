@@ -41,4 +41,6 @@ public class User {
     private List<Basket> baskets;
     @OneToOne(mappedBy = "user")
     private PersonalAccount personalAccount;
+    @OneToOne(mappedBy = "user")
+    private Token token;
 }

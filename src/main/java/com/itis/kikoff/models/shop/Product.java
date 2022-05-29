@@ -25,13 +25,15 @@ public class Product {
     @NotNull
     private String name;
     @NotNull
+    private String url;
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category categories;
     @OneToMany(mappedBy = "product")
     private List<BillProduct> billProductList;
     @OneToMany(mappedBy = "product")
-    @ToString.Exclude
+    //@ToString.Exclude
     private List<BasketProduct> basketProducts;
 
     @Override

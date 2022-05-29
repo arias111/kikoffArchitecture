@@ -22,7 +22,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BillDto {
-    private Long id;
     private Long addressId;
     private Long personalAccountId;
     public static BillDto from(Bill bill) {

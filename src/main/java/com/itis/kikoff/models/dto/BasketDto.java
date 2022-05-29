@@ -18,8 +18,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BasketDto {
-    private Long id;
-//    private UserDto userDto;
     private Long userId;
     private List<ProductDto> productList;
     public static BasketDto from(Long basketId, User user, List<Product> products) {

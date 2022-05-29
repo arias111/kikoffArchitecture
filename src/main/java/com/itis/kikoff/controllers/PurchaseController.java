@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,7 +19,7 @@ public class PurchaseController {
     private BillService billService;
 
     @PostMapping("/bill/success")
-    public ResponseEntity<BillIdDto> successBill(@RequestBody BillIdDto billIdDto) {
+    public ResponseEntity<BillIdDto> successBill(@RequestHeader("X-TOKEN") String token, @RequestBody BillIdDto billIdDto) {
         return ResponseEntity.ok(billService.successBill(billIdDto));
     }
 
